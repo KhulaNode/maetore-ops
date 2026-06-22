@@ -4,8 +4,8 @@ services:
     container_name: maetore-caddy
     restart: unless-stopped
     ports:
-      - "80:80"
-      - "443:443"
+      - "80"
+      - "443"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
       - .:/srv:ro
@@ -18,6 +18,6 @@ services:
     container_name: maetore-api
     restart: unless-stopped
     ports:
-      - "8000:8000"
+      - "8000"
     volumes:
       - ./data:/app/data:ro
