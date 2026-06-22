@@ -1,0 +1,17 @@
+[
+  {
+    "id": "group_a",
+    "name": "Group A",
+    "description": "Sensory, Frans"
+  },
+  {
+    "id": "group_b",
+    "name": "Group B",
+    "description": "Hlologelo, Rogers, Aubrey, Khanyi"
+  },
+  {
+    "id": "special",
+    "name": "Special",
+    "description": "Portia, Happy, Lesiba special pattern"
+  }
+]

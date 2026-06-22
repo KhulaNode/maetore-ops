@@ -1,0 +1,10 @@
+{
+  "name": "Maetore Transport Services",
+  "short_name": "Maetore",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#e9fbff",
+  "theme_color": "#0f3f45",
+  "description": "Sasol R71 staff transport schedule and payment control PWA.",
+  "icons": []
+}

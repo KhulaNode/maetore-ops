@@ -1,0 +1,16 @@
+version: 1
+frontend:
+  phases:
+    build:
+      commands:
+        - echo "Static site has no build step"
+  artifacts:
+    baseDirectory: .
+    files:
+      - "**/*"
+  redirects:
+    - source: "</^[^.]+$|\\.(?!(css|gif|ico|jpg|jpeg|js|png|txt|svg|woff|ttf|map|json)$)([^.]+$)/>"
+      target: /index.html
+      status: 200
+  cache:
+    paths: []

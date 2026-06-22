@@ -1,0 +1,10 @@
+{
+  "businessName": "Maetore Transport Services",
+  "productName": "Sasol R71 Staff Transport",
+  "currency": "ZAR",
+  "paymentPageUrl": "https://paystack.shop/pay/g4cfbgg0ry",
+  "paymentDescription": "Make your bi-weekly Sasol R71 Staff Transport payments here. Use your correct working email address.",
+  "fortnightFee": 60000,
+  "radiusRule": "Within 12 km of Polokwane, measured from corner Biccard and Rissik.",
+  "themeImage": "assets/maetore-theme.png"
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f3f45" />
+  <title>Maetore Transport Services</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <div class="hero-copy-block">
+        <p class="eyebrow">Maetore Transport Services</p>
+        <h1>Schedule Dashboard</h1>
+        <p class="hero-copy">Live roster visibility for Sasol R71 staff transport operations.</p>
+      </div>
+      <div class="hero-metrics" aria-label="Operations summary">
+        <div class="metric">
+          <span class="metric-label">Roster Days</span>
+          <strong id="metricDays">0</strong>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Passengers</span>
+          <strong id="metricPassengers">9</strong>
+        </div>
+      </div>
+    </div>
+  </header>
+  <nav class="tabs" aria-label="Main navigation">
+    <button class="tab active" data-view="schedule">Schedule</button>
+    <button class="tab" data-view="today">Today</button>
+  </nav>
+  <main>
+    <section id="schedule" class="view active">
+      <div class="toolbar">
+        <div>
+          <h2>Roster Schedule</h2>
+          <p class="muted">Daily dispatch view across all four transport movements.</p>
+        </div>
+        <div class="toolbar-actions">
+          <div class="search-wrap">
+            <input type="text" id="searchInput" placeholder="Search passenger..." class="search-input" />
+            <span class="search-icon">&#x1F50D;</span>
+          </div>
+          <button id="copyScheduleBtn">Copy Today</button>
+        </div>
+      </div>
+      <section class="panel schedule-panel">
+        <div class="table-wrap">
+          <table class="ops-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Morning In</th>
+                <th>Morning Out</th>
+                <th>Evening In</th>
+                <th>Evening Out</th>
+              </tr>
+            </thead>
+            <tbody id="scheduleRows"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+    <section id="today" class="view">
+      <div class="toolbar">
+        <label>Date <input type="date" id="todayDate" /></label>
+        <button id="refreshTodayBtn">Refresh</button>
+      </div>
+      <div class="trip-grid">
+        <section class="trip-card">
+          <div class="trip-heading">
+            <h2>Morning In</h2>
+            <span id="todayMorningInCount" class="trip-count">0</span>
+          </div>
+          <div id="todayMorningIn" class="passenger-list"></div>
+        </section>
+        <section class="trip-card">
+          <div class="trip-heading">
+            <h2>Morning Out</h2>
+            <span id="todayMorningOutCount" class="trip-count">0</span>
+          </div>
+          <div id="todayMorningOut" class="passenger-list"></div>
+        </section>
+        <section class="trip-card">
+          <div class="trip-heading">
+            <h2>Evening In</h2>
+            <span id="todayEveningInCount" class="trip-count">0</span>
+          </div>
+          <div id="todayEveningIn" class="passenger-list"></div>
+        </section>
+        <section class="trip-card">
+          <div class="trip-heading">
+            <h2>Evening Out</h2>
+            <span id="todayEveningOutCount" class="trip-count">0</span>
+          </div>
+          <div id="todayEveningOut" class="passenger-list"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>
