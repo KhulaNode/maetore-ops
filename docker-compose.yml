@@ -14,7 +14,9 @@ services:
         condition: service_started
 
   api:
-    build: ./api
+    build:
+      context: .
+      dockerfile: api/Dockerfile
     container_name: maetore-api
     restart: unless-stopped
     ports:
