@@ -16,26 +16,6 @@ A lightweight HTML/CSS/JS single-page app for Sasol R71 Staff Transport.
 - Payment page link to Paystack
 - DynamoDB-ready JSON structure
 
-## Run locally
-
-From inside the folder:
-
-```bash
-python3 -m http.server 8080
-```
-
-Open:
-
-```text
-http://localhost:8080
-```
-
-Do not double-click `index.html`; JSON fetches may be blocked.
-
-## Deploy to AWS Amplify
-
-This repo is a static site. Connect the repo to Amplify and use the included `amplify.yml` at the project root. No build step is required.
-
 ## Shift interpretation
 
 - `D` day shift = Morning In + Evening Out
