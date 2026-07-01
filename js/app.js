@@ -6,15 +6,9 @@ const state = {
   searchQuery: "",
   pickupMap: null,
   pickupLayer: null,
-  specialLayer: null,
 };
 const defaultDate = getCurrentDateString();
 const pickupMapInitialView = { lat: -23.896257, lng: 29.457121, zoom: 11 };
-const specialMapStops = [
-  { id: "r71", label: "R71", name: "Sasol R71", coordinates: [29.5160153, -23.8978861] },
-  { id: "jorrisen", label: "Jorrisen", name: "Sasol Jorrisen", coordinates: [29.4593845, -23.9052611] },
-  { id: "ssi", label: "SSI Security", name: "SSI Security", coordinates: [29.4754902, -23.9133595] },
-];
 const movementLabels = {
   morningIn: "Morning In",
   morningOut: "Morning Out",
@@ -278,55 +272,42 @@ function renderPickupMap(records) {
       attribution: "&copy; OpenStreetMap contributors",
     }).addTo(state.pickupMap);
 
-    renderSpecialMapMarkers();
   }
 
   if (state.pickupLayer) {
     state.pickupLayer.remove();
   }
 
-  const markers = records.map((record) => {
-    const [lng, lat] = record.coordinates;
-    const passengerNames = passengerDisplayNames(record);
+  const groups = groupByCoordinates(records);
+
+  const markers = groups.map((group) => {
+    const [lng, lat] = group[0].coordinates;
+    const seqs = group.map((r) => r.sequence);
+    const label = seqs.length > 1 ? `${Math.min(...seqs)}-${Math.max(...seqs)}` : String(seqs[0]);
+
+    const types = [...new Set(group.map((r) => r.type))];
+    const typeClass = types.length === 1 ? types[0] : "pickup";
+    const groupClass = group.length > 1 ? "pickup-marker-grouped" : "";
+
+    const popupHtml = group
+      .map((r) => {
+        const names = passengerDisplayNames(r);
+        return `<strong>${r.sequence}. ${escapeHtml(names || r.name)}</strong><br>${escapeHtml(r.type)}`;
+      })
+      .join("<hr style=\"margin:4px 0;border-color:rgba(6,42,49,0.1)\">");
+
     return L.marker([lat, lng], {
       icon: L.divIcon({
-        className: `pickup-marker pickup-marker-${record.type}`,
-        html: `<span>${record.sequence}</span><strong>${escapeHtml(passengerNames || record.name)}</strong>`,
+        className: `pickup-marker pickup-marker-${typeClass} ${groupClass}`,
+        html: `<span>${label}</span>`,
         iconSize: null,
       }),
-      title: record.name,
-    }).bindPopup(`
-      <strong>${escapeHtml(record.sequence)}. ${escapeHtml(passengerNames || record.name)}</strong><br>
-      ${escapeHtml(record.type)} · ${escapeHtml(record.note || record.name)}
-    `);
+      title: group.map((r) => r.name).join(", "),
+    }).bindPopup(popupHtml);
   });
 
   state.pickupLayer = L.featureGroup(markers).addTo(state.pickupMap);
-  renderSpecialMapMarkers();
   setTimeout(() => state.pickupMap?.invalidateSize(), 0);
-}
-
-function renderSpecialMapMarkers() {
-  if (!state.pickupMap || typeof L === "undefined") return;
-
-  if (state.specialLayer) {
-    state.specialLayer.remove();
-  }
-
-  const markers = specialMapStops.map((stop) => {
-    const [lng, lat] = stop.coordinates;
-    return L.marker([lat, lng], {
-      icon: L.divIcon({
-        className: `special-marker special-marker-${stop.id}`,
-        html: `<strong>${escapeHtml(stop.label)}</strong>`,
-        iconSize: null,
-      }),
-      title: stop.name,
-      zIndexOffset: 500,
-    }).bindPopup(`<strong>${escapeHtml(stop.name)}</strong>`);
-  });
-
-  state.specialLayer = L.featureGroup(markers).addTo(state.pickupMap);
 }
 
 function renderPassengerList(names) {
@@ -371,6 +352,27 @@ function formatRosterRange(dateList) {
   return `${first.toLocaleDateString("en-ZA", firstFormat)} - ${last.toLocaleDateString("en-ZA", lastFormat)}`;
 }
 
+function groupByCoordinates(records) {
+  const threshold = 50;
+  const groups = [];
+  let current = [records[0]];
+
+  for (let i = 1; i < records.length; i++) {
+    const [lng1, lat1] = current[current.length - 1].coordinates;
+    const [lng2, lat2] = records[i].coordinates;
+    const dist = L.latLng(lat1, lng1).distanceTo(L.latLng(lat2, lng2));
+
+    if (dist <= threshold) {
+      current.push(records[i]);
+    } else {
+      groups.push(current);
+      current = [records[i]];
+    }
+  }
+  if (current.length) groups.push(current);
+  return groups;
+}
+
 function hasCoordinates(record) {
   return Array.isArray(record.coordinates)
     && Number.isFinite(record.coordinates[0])
@@ -387,7 +389,6 @@ function destroyPickupMap() {
   state.pickupMap.remove();
   state.pickupMap = null;
   state.pickupLayer = null;
-  state.specialLayer = null;
 }
 
 function escapeHtml(value) {

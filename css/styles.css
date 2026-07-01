@@ -488,83 +488,51 @@ button:disabled:hover {
 }
 
 .pickup-marker {
-  display: flex !important;
-  align-items: center;
-  gap: 6px;
-  width: max-content !important;
-  height: auto !important;
-  padding: 5px 8px 5px 5px;
+  display: grid !important;
+  place-items: center;
+  width: 24px !important;
+  height: 24px !important;
   background: white;
-  border: 1px solid rgba(6, 42, 49, 0.22);
-  box-shadow: 0 8px 20px rgba(6, 42, 49, 0.16);
-  color: var(--deep);
-  border-radius: 999px;
-  font-size: 12px;
+  border: 2px solid rgba(6, 42, 49, 0.2);
+  box-shadow: 0 2px 6px rgba(6, 42, 49, 0.18);
+  border-radius: 50%;
+  font-size: 10px;
   font-weight: 800;
   line-height: 1;
-  white-space: nowrap;
+  color: var(--deep);
 }
 
 .pickup-marker-pickup {
-  border-color: rgba(20, 121, 133, 0.34);
-  color: var(--teal);
-}
-
-.pickup-marker-pickup span {
-  background: rgba(20, 121, 133, 0.16);
+  border-color: var(--teal);
   color: var(--teal);
 }
 
 .pickup-marker-dropoff {
-  border-color: rgba(245, 184, 75, 0.5);
-  color: #765114;
-}
-
-.pickup-marker-dropoff span {
-  background: rgba(245, 184, 75, 0.34);
+  border-color: var(--gold);
   color: #765114;
 }
 
 .pickup-marker span {
-  display: grid;
-  place-items: center;
-  width: 24px;
-  height: 24px;
-  flex: 0 0 24px;
-  border-radius: 50%;
-}
-
-.pickup-marker strong {
   display: block;
-  max-width: 140px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1;
 }
 
-.special-marker {
-  width: max-content !important;
-  height: auto !important;
-  padding: 6px 9px;
-  border: 2px solid white;
-  box-shadow: 0 8px 22px rgba(6, 42, 49, 0.22);
-  color: white;
-  border-radius: 8px;
-  font-size: 12px;
-  font-weight: 900;
-  line-height: 1;
+.pickup-marker-grouped {
+  width: auto !important;
+  height: 24px !important;
+  padding: 0 14px;
+  border-radius: 999px;
+  gap: 3px;
+  font-size: 10px;
   white-space: nowrap;
 }
 
-.special-marker-r71 {
-  background: var(--deep);
-}
-
-.special-marker-jorrisen {
-  background: var(--blue);
-}
-
-.special-marker-ssi {
-  background: var(--teal-bright);
+@media (max-width: 640px) {
+  .pickup-marker-grouped {
+    height: 22px !important;
+    padding: 0 11px;
+    font-size: 9px;
+  }
 }
 
 .map-empty {
@@ -721,13 +689,11 @@ button:disabled:hover {
     min-height: 420px;
   }
 
-  .pickup-marker strong {
-    max-width: 100px;
-  }
-
-  .special-marker {
-    font-size: 11px;
-    padding: 5px 7px;
+  .pickup-marker {
+    width: 22px !important;
+    height: 22px !important;
+    font-size: 9px;
+    border-width: 1.5px;
   }
 }
 
