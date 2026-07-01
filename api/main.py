@@ -22,6 +22,13 @@ def load(name: str):
         raise HTTPException(404, f"{name}.json not found")
 
 
+def load_geojson(name: str):
+    try:
+        return json.loads((DATA / f"{name}.geojson").read_text())
+    except FileNotFoundError:
+        raise HTTPException(404, f"{name}.geojson not found")
+
+
 @app.get("/api/passengers")
 def get_passengers():
     return load("passengers")
@@ -40,6 +47,11 @@ def get_invoices():
 @app.get("/api/groups")
 def get_groups():
     return load("groups")
+
+
+@app.get("/api/passenger-home-locations")
+def get_passenger_home_locations():
+    return load_geojson("passenger-home-locations")
 
 
 @app.get("/api/config")

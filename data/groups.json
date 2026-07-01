@@ -1,17 +1,37 @@
 [
   {
     "id": "group_a",
-    "name": "Group A",
+    "name": "Team A",
     "description": "Sensory, Frans"
   },
   {
     "id": "group_b",
-    "name": "Group B",
+    "name": "Team B",
     "description": "Hlologelo, Rogers, Aubrey, Khanyi"
   },
   {
-    "id": "special",
-    "name": "Special",
-    "description": "Portia, Happy, Lesiba special pattern"
+    "id": "group_c",
+    "name": "Team C",
+    "description": "Lesiba"
+  },
+  {
+    "id": "floater",
+    "name": "Floater",
+    "description": "Portia, Asher"
+  },
+  {
+    "id": "jorrisen",
+    "name": "Sasol Jorrisen",
+    "description": "Happy"
+  },
+  {
+    "id": "ssi_security",
+    "name": "SSI Security",
+    "description": "Johannes"
+  },
+  {
+    "id": "seattle_coffee",
+    "name": "Seattle Coffee R71",
+    "description": "Precious"
   }
 ]

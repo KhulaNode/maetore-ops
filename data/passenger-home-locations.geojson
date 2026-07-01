@@ -1,0 +1,269 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.3993861,
+          -23.8799718
+        ]
+      },
+      "properties": {
+        "passenger_id": "p_sensory_vukeya",
+        "full_name": "Sensory Vukeya",
+        "short_name": "Sensory",
+        "group_id": "group_a",
+        "group_name": "Team A",
+        "pickup_area": "Ext 76",
+        "dropoff_area": "Sasol R71",
+        "status": "active",
+        "phone": "+27 79 960 2826",
+        "email": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.4210221,
+          -23.8860013
+        ]
+      },
+      "properties": {
+        "passenger_id": "p_frans_mokgehle",
+        "full_name": "Frans Mokgehle",
+        "short_name": "Frans",
+        "group_id": "group_a",
+        "group_name": "Team A",
+        "pickup_area": "Ext 78",
+        "dropoff_area": "Sasol R71",
+        "status": "active",
+        "phone": "+27 76 939 9626",
+        "email": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.3702494,
+          -23.859129
+        ]
+      },
+      "properties": {
+        "passenger_id": "p_hlologelo_ledwaba",
+        "full_name": "Thlologelo Ledwaba",
+        "short_name": "Thlologelo",
+        "group_id": "group_b",
+        "group_name": "Team B",
+        "pickup_area": "Seshego Zone 8",
+        "dropoff_area": "Sasol R71",
+        "status": "active",
+        "phone": "+27 78 512 8769",
+        "email": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.4104107,
+          -23.8923877
+        ]
+      },
+      "properties": {
+        "passenger_id": "p_rogers_pazinini",
+        "full_name": "Rogers Pazinini",
+        "short_name": "Rogers",
+        "group_id": "group_b",
+        "group_name": "Team B",
+        "pickup_area": "Ext 44",
+        "dropoff_area": "Sasol R71",
+        "status": "active",
+        "phone": "+27 78 343 0203",
+        "email": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.3587044,
+          -23.846616
+        ]
+      },
+      "properties": {
+        "passenger_id": "p_aubrey_ntini",
+        "full_name": "Aubrey Ntini",
+        "short_name": "Aubrey",
+        "group_id": "group_b",
+        "group_name": "Team B",
+        "pickup_area": "Seshego Zone 5",
+        "dropoff_area": "Sasol R71",
+        "status": "active",
+        "phone": "+27 71 967 8532",
+        "email": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.4462466,
+          -23.9231556
+        ]
+      },
+      "properties": {
+        "passenger_id": "p_khanyi_maluleka",
+        "full_name": "Khanyi Maluleka",
+        "short_name": "Khanyi",
+        "group_id": "group_b",
+        "group_name": "Team B",
+        "pickup_area": "Ivy Park, Section 21",
+        "dropoff_area": "Sasol R71",
+        "status": "active",
+        "phone": "+27 83 530 5730",
+        "email": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.3507395,
+          -23.8196517
+        ]
+      },
+      "properties": {
+        "passenger_id": "p_lesiba_choeu",
+        "full_name": "Lesiba Choeu",
+        "short_name": "Lesiba",
+        "group_id": "group_c",
+        "group_name": "Team C",
+        "pickup_area": "Spook Park",
+        "dropoff_area": "Sasol R71",
+        "status": "active",
+        "phone": "+27 81 825 5409",
+        "email": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.3505369,
+          -23.8195461
+        ]
+      },
+      "properties": {
+        "passenger_id": "p_happy_choeu",
+        "full_name": "Happy Choeu",
+        "short_name": "Happy",
+        "group_id": "jorrisen",
+        "group_name": "Sasol Jorrisen",
+        "pickup_area": "Spook Park",
+        "dropoff_area": "Sasol Jorrisen",
+        "status": "active",
+        "phone": "+27 71 497 1716",
+        "email": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.3969942,
+          -23.8827173
+        ]
+      },
+      "properties": {
+        "passenger_id": "p_portia_munyai",
+        "full_name": "Portia Munyai",
+        "short_name": "Portia",
+        "group_id": "floater",
+        "group_name": "Floater",
+        "pickup_area": "Ext 76",
+        "dropoff_area": "Sasol R71",
+        "status": "active",
+        "phone": "+27 60 952 0494",
+        "email": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.3998672,
+          -23.8791688
+        ]
+      },
+      "properties": {
+        "passenger_id": "p_johannes_ramoraswi",
+        "full_name": "Johannes Ramoraswi",
+        "short_name": "Johannes",
+        "group_id": "ssi_security",
+        "group_name": "SSI Security",
+        "pickup_area": "Ext 76",
+        "dropoff_area": "SSI Security",
+        "status": "active",
+        "phone": "+27 76 603 9704",
+        "email": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.5055955,
+          -23.9081105
+        ]
+      },
+      "properties": {
+        "passenger_id": "p_asher_malungani",
+        "full_name": "Asher Malungani",
+        "short_name": "Asher",
+        "group_id": "floater",
+        "group_name": "Floater",
+        "pickup_area": "Serala View",
+        "dropoff_area": "Sasol R71",
+        "status": "active",
+        "phone": "+27 65 811 9613",
+        "email": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.3623865,
+          -23.854671
+        ]
+      },
+      "properties": {
+        "passenger_id": "p_precious_mpyanyane",
+        "full_name": "Precious Mpyanyane",
+        "short_name": "Precious",
+        "group_id": "seattle_coffee",
+        "group_name": "Seattle Coffee R71",
+        "pickup_area": "Seshego Zone 8",
+        "dropoff_area": "Seattle Coffee R71",
+        "status": "active",
+        "phone": "+27 72 048 6178",
+        "email": ""
+      }
+    }
+  ]
+}

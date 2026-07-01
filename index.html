@@ -5,7 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0f3f45" />
   <title>Maetore Transport Services</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
   <link rel="manifest" href="manifest.json" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -14,12 +20,11 @@
       <div class="hero-copy-block">
         <p class="eyebrow">Maetore Transport Services</p>
         <h1>Schedule Dashboard</h1>
-        <p class="hero-copy">Live roster visibility for Sasol R71 staff transport operations.</p>
       </div>
       <div class="hero-metrics" aria-label="Operations summary">
         <div class="metric">
-          <span class="metric-label">Roster Days</span>
-          <strong id="metricDays">0</strong>
+          <span class="metric-label">Roster Range</span>
+          <strong id="metricRosterRange" class="metric-range">No roster</strong>
         </div>
         <div class="metric">
           <span class="metric-label">Passengers</span>
@@ -30,6 +35,7 @@
   </header>
   <nav class="tabs" aria-label="Main navigation">
     <button class="tab active" data-view="schedule">Schedule</button>
+    <button class="tab" data-view="dispatch">Pickups</button>
     <button class="tab" data-view="today">Today</button>
   </nav>
   <main>
@@ -37,14 +43,13 @@
       <div class="toolbar">
         <div>
           <h2>Roster Schedule</h2>
-          <p class="muted">Daily dispatch view across all four transport movements.</p>
+          <p class="muted">Daily transport view across all four movements.</p>
         </div>
         <div class="toolbar-actions">
           <div class="search-wrap">
             <input type="text" id="searchInput" placeholder="Search passenger..." class="search-input" />
             <span class="search-icon">&#x1F50D;</span>
           </div>
-          <button id="copyScheduleBtn">Copy Today</button>
         </div>
       </div>
       <section class="panel schedule-panel">
@@ -63,6 +68,47 @@
           </table>
         </div>
       </section>
+    </section>
+    <section id="dispatch" class="view">
+      <div class="toolbar">
+        <div>
+          <h2>Pickup View</h2>
+          <p class="muted">Passenger movement list and pickup map for the selected date.</p>
+        </div>
+        <div class="toolbar-actions">
+          <label>Date <input type="date" id="dispatchDate" /></label>
+          <label>
+            Movement
+            <select id="dispatchMovement">
+              <option value="morningIn">Morning In</option>
+              <option value="morningOut">Morning Out</option>
+              <option value="eveningIn">Evening In</option>
+              <option value="eveningOut">Evening Out</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="dispatch-layout">
+        <section class="panel dispatch-manifest">
+          <div class="dispatch-heading">
+            <div>
+              <h2 id="dispatchTitle">Morning In</h2>
+              <p id="dispatchSubtitle" class="muted">No date selected</p>
+            </div>
+            <span id="dispatchCount" class="trip-count">0</span>
+          </div>
+          <div id="dispatchList" class="manifest-list"></div>
+        </section>
+        <section class="panel dispatch-map-panel">
+          <div class="dispatch-heading">
+            <div>
+              <h2>Pickup Map</h2>
+              <p id="dispatchMapSummary" class="muted">Interactive pickup map from the GeoJSON file.</p>
+            </div>
+          </div>
+          <div id="dispatchMap" class="dispatch-map" aria-label="Selected pickup locations"></div>
+        </section>
+      </div>
     </section>
     <section id="today" class="view">
       <div class="toolbar">
@@ -101,6 +147,9 @@
       </div>
     </section>
   </main>
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  ></script>
   <script src="js/app.js"></script>
 </body>
 </html>

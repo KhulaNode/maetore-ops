@@ -1,10 +1,11 @@
-const CACHE_NAME = "maetore-spa-v9";
+const CACHE_NAME = "maetore-spa-v13";
 const ASSETS = [
   "./",
   "./index.html",
   "./css/styles.css",
   "./js/app.js",
   "./manifest.json",
+  "./assets/favicon.svg",
   "./assets/maetore-theme.png",
   "./assets/maetore-hero.png",
 ];
