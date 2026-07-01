@@ -358,38 +358,6 @@ tbody td:first-child {
   line-height: 1.2;
 }
 
-.trip-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.trip-card {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  padding: 18px 18px 16px;
-  box-shadow: 0 10px 28px rgba(6, 42, 49, 0.05);
-  border-radius: 12px;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-
-.trip-card:hover {
-  box-shadow: 0 14px 36px rgba(6, 42, 49, 0.08);
-  transform: translateY(-1px);
-}
-
-.trip-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.trip-heading h2 {
-  margin-bottom: 0;
-}
-
 .trip-count {
   color: var(--blue);
   font-size: 28px;
@@ -458,6 +426,38 @@ tbody td:first-child {
   line-height: 1.25;
 }
 
+.stop-title-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: start;
+}
+
+.stop-title-row h3 {
+  min-width: 0;
+}
+
+.stop-type {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.stop-type.pickup {
+  background: rgba(20, 121, 133, 0.14);
+  color: var(--teal);
+}
+
+.stop-type.dropoff {
+  background: rgba(245, 184, 75, 0.24);
+  color: #765114;
+}
+
 .manifest-main p,
 .manifest-main span {
   display: block;
@@ -505,22 +505,66 @@ button:disabled:hover {
   white-space: nowrap;
 }
 
+.pickup-marker-pickup {
+  border-color: rgba(20, 121, 133, 0.34);
+  color: var(--teal);
+}
+
+.pickup-marker-pickup span {
+  background: rgba(20, 121, 133, 0.16);
+  color: var(--teal);
+}
+
+.pickup-marker-dropoff {
+  border-color: rgba(245, 184, 75, 0.5);
+  color: #765114;
+}
+
+.pickup-marker-dropoff span {
+  background: rgba(245, 184, 75, 0.34);
+  color: #765114;
+}
+
 .pickup-marker span {
   display: grid;
   place-items: center;
   width: 24px;
   height: 24px;
   flex: 0 0 24px;
-  background: var(--gold);
-  color: var(--ink);
   border-radius: 50%;
 }
 
 .pickup-marker strong {
   display: block;
-  max-width: 110px;
+  max-width: 140px;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.special-marker {
+  width: max-content !important;
+  height: auto !important;
+  padding: 6px 9px;
+  border: 2px solid white;
+  box-shadow: 0 8px 22px rgba(6, 42, 49, 0.22);
+  color: white;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.special-marker-r71 {
+  background: var(--deep);
+}
+
+.special-marker-jorrisen {
+  background: var(--blue);
+}
+
+.special-marker-ssi {
+  background: var(--teal-bright);
 }
 
 .map-empty {
@@ -582,10 +626,6 @@ button:disabled:hover {
 
   .hero-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .trip-grid {
-    grid-template-columns: 1fr;
   }
 
   .dispatch-layout {
@@ -682,7 +722,12 @@ button:disabled:hover {
   }
 
   .pickup-marker strong {
-    max-width: 92px;
+    max-width: 100px;
+  }
+
+  .special-marker {
+    font-size: 11px;
+    padding: 5px 7px;
   }
 }
 
@@ -699,8 +744,7 @@ button:disabled:hover {
     font-size: 18px;
   }
 
-  .dispatch-heading,
-  .trip-heading {
+  .dispatch-heading {
     align-items: start;
   }
 }

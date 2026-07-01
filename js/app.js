@@ -1,6 +1,20 @@
-const state = { passengers: [], schedules: [], locations: [], searchQuery: "", pickupMap: null, pickupLayer: null };
-const defaultDate = getTodayDateString();
+const state = {
+  passengers: [],
+  schedules: [],
+  locations: [],
+  routeCache: new Map(),
+  searchQuery: "",
+  pickupMap: null,
+  pickupLayer: null,
+  specialLayer: null,
+};
+const defaultDate = getCurrentDateString();
 const pickupMapInitialView = { lat: -23.896257, lng: 29.457121, zoom: 11 };
+const specialMapStops = [
+  { id: "r71", label: "R71", name: "Sasol R71", coordinates: [29.5160153, -23.8978861] },
+  { id: "jorrisen", label: "Jorrisen", name: "Sasol Jorrisen", coordinates: [29.4593845, -23.9052611] },
+  { id: "ssi", label: "SSI Security", name: "SSI Security", coordinates: [29.4754902, -23.9133595] },
+];
 const movementLabels = {
   morningIn: "Morning In",
   morningOut: "Morning Out",
@@ -14,7 +28,7 @@ async function loadJson(path) {
   return response.json();
 }
 
-function getTodayDateString() {
+function getCurrentDateString() {
   const now = new Date();
   const year = String(now.getFullYear());
   const month = String(now.getMonth() + 1).padStart(2, "0");
@@ -33,7 +47,6 @@ async function boot() {
   state.schedules = schedules;
   state.locations = homeLocations.features || [];
 
-  document.querySelector("#todayDate").value = defaultDate;
   document.querySelector("#dispatchDate").value = defaultDate;
   setupTabs();
   setupEvents();
@@ -56,10 +69,8 @@ function setupTabs() {
 }
 
 function setupEvents() {
-  document.querySelector("#todayDate").addEventListener("change", renderToday);
-  document.querySelector("#refreshTodayBtn").addEventListener("click", renderToday);
-  document.querySelector("#dispatchDate").addEventListener("change", renderDispatch);
-  document.querySelector("#dispatchMovement").addEventListener("change", renderDispatch);
+  document.querySelector("#dispatchDate").addEventListener("change", () => renderDispatch());
+  document.querySelector("#dispatchMovement").addEventListener("change", () => renderDispatch());
   document.querySelector("#searchInput").addEventListener("input", (e) => {
     state.searchQuery = e.target.value.trim().toLowerCase();
     renderSchedule();
@@ -69,7 +80,6 @@ function setupEvents() {
 function renderAll() {
   renderMetrics();
   renderSchedule();
-  renderToday();
   renderDispatch();
 }
 
@@ -174,54 +184,65 @@ function renderSchedule() {
   document.querySelector("#scheduleRows").innerHTML = rows;
 }
 
-function renderToday() {
-  const date = document.querySelector("#todayDate").value || defaultDate;
-  const mappings = [
-    ["todayMorningIn", "todayMorningInCount", "morningIn"],
-    ["todayMorningOut", "todayMorningOutCount", "morningOut"],
-    ["todayEveningIn", "todayEveningInCount", "eveningIn"],
-    ["todayEveningOut", "todayEveningOutCount", "eveningOut"],
-  ];
-
-  mappings.forEach(([listId, countId, field]) => {
-    const names = passengerNamesFor(date, field);
-    document.querySelector(`#${listId}`).innerHTML = renderPassengerList(names);
-    document.querySelector(`#${countId}`).textContent = String(names.length);
-  });
-
-  renderMetrics();
-}
-
-function renderDispatch() {
+async function renderDispatch() {
   const date = document.querySelector("#dispatchDate").value || defaultDate;
   const movement = document.querySelector("#dispatchMovement").value;
-  const records = passengersForMovement(date, movement);
-  const recordsWithLocations = records.filter((record) => hasCoordinates(record));
+  const route = await loadRoute(date, movement);
+  const stops = route?.stops || [];
+  const stopsWithLocations = stops.filter((stop) => hasCoordinates(stop));
 
   document.querySelector("#dispatchTitle").textContent = movementLabels[movement];
-  document.querySelector("#dispatchSubtitle").textContent = formatDate(date);
-  document.querySelector("#dispatchCount").textContent = String(records.length);
-  document.querySelector("#dispatchMapSummary").textContent = `${recordsWithLocations.length} of ${records.length} passengers have pickup pins`;
-  document.querySelector("#dispatchList").innerHTML = renderDispatchList(records);
-  renderPickupMap(recordsWithLocations);
+  document.querySelector("#dispatchSubtitle").textContent = route
+    ? formatDate(date)
+    : `${formatDate(date)} · no route order`;
+  document.querySelector("#dispatchCount").textContent = String(stops.length);
+  document.querySelector("#dispatchMapSummary").textContent = route
+    ? `${stopsWithLocations.length} ordered stops`
+    : "No route order generated for this selection";
+  document.querySelector("#dispatchList").innerHTML = renderDispatchList(stops);
+  renderPickupMap(stopsWithLocations);
 }
 
-function renderDispatchList(records) {
-  if (!records.length) {
-    return `<div class="empty-state">No passengers assigned to this movement.</div>`;
+async function loadRoute(date, movement) {
+  const path = `/route_outputs/${routeFileName(date, movement)}`;
+
+  if (state.routeCache.has(path)) {
+    return state.routeCache.get(path);
   }
 
-  return records
-    .map((record, index) => {
-      const locationStatus = hasCoordinates(record) ? "Pickup mapped" : "Pickup not mapped";
+  try {
+    const route = await loadJson(path);
+    state.routeCache.set(path, route);
+    return route;
+  } catch (error) {
+    state.routeCache.set(path, null);
+    return null;
+  }
+}
+
+function routeFileName(date, movement) {
+  return `${date}_${movement}_route.json`;
+}
+
+function renderDispatchList(stops) {
+  if (!stops.length) {
+    return `<div class="empty-state">No route order generated for this movement.</div>`;
+  }
+
+  return stops
+    .map((stop) => {
+      const passengerNames = passengerDisplayNames(stop);
+      const area = stop.passengers[0]?.pickup_area || stop.name;
 
       return `
         <article class="manifest-card">
-          <div class="manifest-index">${index + 1}</div>
+          <div class="manifest-index">${stop.sequence}</div>
           <div class="manifest-main">
-            <h3>${escapeHtml(record.fullName)}</h3>
-            <p>${escapeHtml(record.pickupArea || "Pickup area not set")} to ${escapeHtml(record.dropoffArea || "dropoff not set")}</p>
-            <span>${escapeHtml(record.groupName || "No group")} · ${locationStatus}</span>
+            <div class="stop-title-row">
+              <h3>${escapeHtml(passengerNames || stop.name)}</h3>
+              <span class="stop-type ${stop.type}">${escapeHtml(stop.type)}</span>
+            </div>
+            <p>${escapeHtml(area)}</p>
           </div>
         </article>
       `;
@@ -256,29 +277,56 @@ function renderPickupMap(records) {
       maxZoom: 19,
       attribution: "&copy; OpenStreetMap contributors",
     }).addTo(state.pickupMap);
+
+    renderSpecialMapMarkers();
   }
 
   if (state.pickupLayer) {
     state.pickupLayer.remove();
   }
 
-  const markers = records.map((record, index) => {
+  const markers = records.map((record) => {
     const [lng, lat] = record.coordinates;
+    const passengerNames = passengerDisplayNames(record);
     return L.marker([lat, lng], {
       icon: L.divIcon({
-        className: "pickup-marker",
-        html: `<span>${index + 1}</span><strong>${escapeHtml(record.shortName)}</strong>`,
+        className: `pickup-marker pickup-marker-${record.type}`,
+        html: `<span>${record.sequence}</span><strong>${escapeHtml(passengerNames || record.name)}</strong>`,
         iconSize: null,
       }),
-      title: record.fullName,
+      title: record.name,
     }).bindPopup(`
-      <strong>${escapeHtml(record.fullName)}</strong><br>
-      ${escapeHtml(record.pickupArea || "Pickup area not set")}
+      <strong>${escapeHtml(record.sequence)}. ${escapeHtml(passengerNames || record.name)}</strong><br>
+      ${escapeHtml(record.type)} · ${escapeHtml(record.note || record.name)}
     `);
   });
 
   state.pickupLayer = L.featureGroup(markers).addTo(state.pickupMap);
+  renderSpecialMapMarkers();
   setTimeout(() => state.pickupMap?.invalidateSize(), 0);
+}
+
+function renderSpecialMapMarkers() {
+  if (!state.pickupMap || typeof L === "undefined") return;
+
+  if (state.specialLayer) {
+    state.specialLayer.remove();
+  }
+
+  const markers = specialMapStops.map((stop) => {
+    const [lng, lat] = stop.coordinates;
+    return L.marker([lat, lng], {
+      icon: L.divIcon({
+        className: `special-marker special-marker-${stop.id}`,
+        html: `<strong>${escapeHtml(stop.label)}</strong>`,
+        iconSize: null,
+      }),
+      title: stop.name,
+      zIndexOffset: 500,
+    }).bindPopup(`<strong>${escapeHtml(stop.name)}</strong>`);
+  });
+
+  state.specialLayer = L.featureGroup(markers).addTo(state.pickupMap);
 }
 
 function renderPassengerList(names) {
@@ -329,12 +377,17 @@ function hasCoordinates(record) {
     && Number.isFinite(record.coordinates[1]);
 }
 
+function passengerDisplayNames(stop) {
+  return stop.passengers.map((passenger) => passenger.full_name || passenger.short_name).join(", ");
+}
+
 function destroyPickupMap() {
   if (!state.pickupMap) return;
 
   state.pickupMap.remove();
   state.pickupMap = null;
   state.pickupLayer = null;
+  state.specialLayer = null;
 }
 
 function escapeHtml(value) {

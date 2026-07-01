@@ -35,8 +35,7 @@
   </header>
   <nav class="tabs" aria-label="Main navigation">
     <button class="tab active" data-view="schedule">Schedule</button>
-    <button class="tab" data-view="dispatch">Pickups</button>
-    <button class="tab" data-view="today">Today</button>
+    <button class="tab" data-view="dispatch">Daily Schedule</button>
   </nav>
   <main>
     <section id="schedule" class="view active">
@@ -107,42 +106,6 @@
             </div>
           </div>
           <div id="dispatchMap" class="dispatch-map" aria-label="Selected pickup locations"></div>
-        </section>
-      </div>
-    </section>
-    <section id="today" class="view">
-      <div class="toolbar">
-        <label>Date <input type="date" id="todayDate" /></label>
-        <button id="refreshTodayBtn">Refresh</button>
-      </div>
-      <div class="trip-grid">
-        <section class="trip-card">
-          <div class="trip-heading">
-            <h2>Morning In</h2>
-            <span id="todayMorningInCount" class="trip-count">0</span>
-          </div>
-          <div id="todayMorningIn" class="passenger-list"></div>
-        </section>
-        <section class="trip-card">
-          <div class="trip-heading">
-            <h2>Morning Out</h2>
-            <span id="todayMorningOutCount" class="trip-count">0</span>
-          </div>
-          <div id="todayMorningOut" class="passenger-list"></div>
-        </section>
-        <section class="trip-card">
-          <div class="trip-heading">
-            <h2>Evening In</h2>
-            <span id="todayEveningInCount" class="trip-count">0</span>
-          </div>
-          <div id="todayEveningIn" class="passenger-list"></div>
-        </section>
-        <section class="trip-card">
-          <div class="trip-heading">
-            <h2>Evening Out</h2>
-            <span id="todayEveningOutCount" class="trip-count">0</span>
-          </div>
-          <div id="todayEveningOut" class="passenger-list"></div>
         </section>
       </div>
     </section>

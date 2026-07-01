@@ -1,0 +1,132 @@
+{
+  "type": "FeatureCollection",
+  "name": "maetore_2026-07-10_morningIn_route",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.3993861,
+          -23.8799718
+        ]
+      },
+      "properties": {
+        "sequence": 1,
+        "type": "pickup",
+        "name": "Sensory Vukeya pickup",
+        "passenger_count": 1,
+        "passengers": "Sensory Vukeya",
+        "note": "Ext 76 pickup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.3998672,
+          -23.8791688
+        ]
+      },
+      "properties": {
+        "sequence": 2,
+        "type": "pickup",
+        "name": "Johannes Ramoraswi pickup",
+        "passenger_count": 1,
+        "passengers": "Johannes Ramoraswi",
+        "note": "Ext 76 pickup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.3969942,
+          -23.8827173
+        ]
+      },
+      "properties": {
+        "sequence": 3,
+        "type": "pickup",
+        "name": "Portia Munyai pickup",
+        "passenger_count": 1,
+        "passengers": "Portia Munyai",
+        "note": "Ext 76 pickup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.4210221,
+          -23.8860013
+        ]
+      },
+      "properties": {
+        "sequence": 4,
+        "type": "pickup",
+        "name": "Frans Mokgehle pickup",
+        "passenger_count": 1,
+        "passengers": "Frans Mokgehle",
+        "note": "Ext 78 pickup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.4754902,
+          -23.9133595
+        ]
+      },
+      "properties": {
+        "sequence": 5,
+        "type": "dropoff",
+        "name": "SSI Security",
+        "passenger_count": 1,
+        "passengers": "Johannes Ramoraswi",
+        "note": "Inbound dropoff ordered by distance to R71"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.5055955,
+          -23.9081105
+        ]
+      },
+      "properties": {
+        "sequence": 6,
+        "type": "pickup",
+        "name": "Asher Malungani pickup",
+        "passenger_count": 1,
+        "passengers": "Asher Malungani",
+        "note": "Serala View pickup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.5160153,
+          -23.8978861
+        ]
+      },
+      "properties": {
+        "sequence": 7,
+        "type": "dropoff",
+        "name": "Sasol R71",
+        "passenger_count": 4,
+        "passengers": "Sensory Vukeya, Frans Mokgehle, Portia Munyai, Asher Malungani",
+        "note": "Inbound dropoff ordered by distance to R71"
+      }
+    }
+  ]
+}

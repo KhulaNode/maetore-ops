@@ -1,0 +1,202 @@
+{
+  "date": "2026-07-10",
+  "movement": "morningIn",
+  "distance_engine": "graphml_shortest_path",
+  "rule_set": {
+    "inbound": "order all eligible pickups and dropoffs furthest-to-closest to R71; never drop a passenger before pickup",
+    "outbound": "order all eligible pickups and dropoffs closest-to-furthest from R71; never drop a passenger before pickup"
+  },
+  "r71": {
+    "id": "r71",
+    "name": "Sasol R71",
+    "coordinates": [
+      29.5160153,
+      -23.8978861
+    ]
+  },
+  "special_destinations": [
+    {
+      "id": "ssi_security",
+      "name": "SSI Security",
+      "coordinates": [
+        29.4754902,
+        -23.9133595
+      ]
+    },
+    {
+      "id": "sasol_jorrisen",
+      "name": "Sasol Jorrisen",
+      "coordinates": [
+        29.4593845,
+        -23.9052611
+      ]
+    }
+  ],
+  "total_distance_km": 18.505,
+  "stops": [
+    {
+      "sequence": 1,
+      "type": "pickup",
+      "name": "Sensory Vukeya pickup",
+      "coordinates": [
+        29.3993861,
+        -23.8799718
+      ],
+      "passengers": [
+        {
+          "id": "p_sensory_vukeya",
+          "full_name": "Sensory Vukeya",
+          "short_name": "Sensory",
+          "pickup_area": "Ext 76",
+          "dropoff_area": "Sasol R71",
+          "group_name": "Team A"
+        }
+      ],
+      "note": "Ext 76 pickup"
+    },
+    {
+      "sequence": 2,
+      "type": "pickup",
+      "name": "Johannes Ramoraswi pickup",
+      "coordinates": [
+        29.3998672,
+        -23.8791688
+      ],
+      "passengers": [
+        {
+          "id": "p_johannes_ramoraswi",
+          "full_name": "Johannes Ramoraswi",
+          "short_name": "Johannes",
+          "pickup_area": "Ext 76",
+          "dropoff_area": "SSI Security",
+          "group_name": "SSI Security"
+        }
+      ],
+      "note": "Ext 76 pickup"
+    },
+    {
+      "sequence": 3,
+      "type": "pickup",
+      "name": "Portia Munyai pickup",
+      "coordinates": [
+        29.3969942,
+        -23.8827173
+      ],
+      "passengers": [
+        {
+          "id": "p_portia_munyai",
+          "full_name": "Portia Munyai",
+          "short_name": "Portia",
+          "pickup_area": "Ext 76",
+          "dropoff_area": "Sasol R71",
+          "group_name": "Floater"
+        }
+      ],
+      "note": "Ext 76 pickup"
+    },
+    {
+      "sequence": 4,
+      "type": "pickup",
+      "name": "Frans Mokgehle pickup",
+      "coordinates": [
+        29.4210221,
+        -23.8860013
+      ],
+      "passengers": [
+        {
+          "id": "p_frans_mokgehle",
+          "full_name": "Frans Mokgehle",
+          "short_name": "Frans",
+          "pickup_area": "Ext 78",
+          "dropoff_area": "Sasol R71",
+          "group_name": "Team A"
+        }
+      ],
+      "note": "Ext 78 pickup"
+    },
+    {
+      "sequence": 5,
+      "type": "dropoff",
+      "name": "SSI Security",
+      "coordinates": [
+        29.4754902,
+        -23.9133595
+      ],
+      "passengers": [
+        {
+          "id": "p_johannes_ramoraswi",
+          "full_name": "Johannes Ramoraswi",
+          "short_name": "Johannes",
+          "pickup_area": "Ext 76",
+          "dropoff_area": "SSI Security",
+          "group_name": "SSI Security"
+        }
+      ],
+      "note": "Inbound dropoff ordered by distance to R71"
+    },
+    {
+      "sequence": 6,
+      "type": "pickup",
+      "name": "Asher Malungani pickup",
+      "coordinates": [
+        29.5055955,
+        -23.9081105
+      ],
+      "passengers": [
+        {
+          "id": "p_asher_malungani",
+          "full_name": "Asher Malungani",
+          "short_name": "Asher",
+          "pickup_area": "Serala View",
+          "dropoff_area": "Sasol R71",
+          "group_name": "Floater"
+        }
+      ],
+      "note": "Serala View pickup"
+    },
+    {
+      "sequence": 7,
+      "type": "dropoff",
+      "name": "Sasol R71",
+      "coordinates": [
+        29.5160153,
+        -23.8978861
+      ],
+      "passengers": [
+        {
+          "id": "p_sensory_vukeya",
+          "full_name": "Sensory Vukeya",
+          "short_name": "Sensory",
+          "pickup_area": "Ext 76",
+          "dropoff_area": "Sasol R71",
+          "group_name": "Team A"
+        },
+        {
+          "id": "p_frans_mokgehle",
+          "full_name": "Frans Mokgehle",
+          "short_name": "Frans",
+          "pickup_area": "Ext 78",
+          "dropoff_area": "Sasol R71",
+          "group_name": "Team A"
+        },
+        {
+          "id": "p_portia_munyai",
+          "full_name": "Portia Munyai",
+          "short_name": "Portia",
+          "pickup_area": "Ext 76",
+          "dropoff_area": "Sasol R71",
+          "group_name": "Floater"
+        },
+        {
+          "id": "p_asher_malungani",
+          "full_name": "Asher Malungani",
+          "short_name": "Asher",
+          "pickup_area": "Serala View",
+          "dropoff_area": "Sasol R71",
+          "group_name": "Floater"
+        }
+      ],
+      "note": "Inbound dropoff ordered by distance to R71"
+    }
+  ]
+}

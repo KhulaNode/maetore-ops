@@ -1,4 +1,4 @@
-const CACHE_NAME = "maetore-spa-v13";
+const CACHE_NAME = "maetore-spa-v18";
 const ASSETS = [
   "./",
   "./index.html",
