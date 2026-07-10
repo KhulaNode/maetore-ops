@@ -1,7 +1,7 @@
 {
   "date": "2026-07-12",
   "movement": "eveningOut",
-  "distance_engine": "haversine",
+  "distance_engine": "graphml_shortest_path",
   "rule_set": {
     "inbound": "order all eligible pickups and dropoffs furthest-to-closest to R71; never drop a passenger before pickup",
     "outbound": "order all eligible pickups and dropoffs closest-to-furthest from R71; never drop a passenger before pickup"
@@ -24,6 +24,14 @@
       ]
     },
     {
+      "id": "mbt_florapark",
+      "name": "MBT Florapark",
+      "coordinates": [
+        29.4754902,
+        -23.9133595
+      ]
+    },
+    {
       "id": "sasol_jorrisen",
       "name": "Sasol Jorrisen",
       "coordinates": [
@@ -32,7 +40,7 @@
       ]
     }
   ],
-  "total_distance_km": 12.414,
+  "total_distance_km": 14.331,
   "stops": [
     {
       "sequence": 1,
@@ -63,25 +71,6 @@
     {
       "sequence": 2,
       "type": "dropoff",
-      "name": "Sensory Vukeya dropoff",
-      "coordinates": [
-        29.3993861,
-        -23.8799718
-      ],
-      "passengers": [
-        {
-          "id": "p_sensory_vukeya",
-          "full_name": "Sensory Vukeya",
-          "short_name": "Sensory",
-          "pickup_area": "Ext 76",
-          "dropoff_area": "Sasol R71"
-        }
-      ],
-      "note": "Ext 76 dropoff"
-    },
-    {
-      "sequence": 3,
-      "type": "dropoff",
       "name": "Portia Munyai dropoff",
       "coordinates": [
         29.3969942,
@@ -92,6 +81,25 @@
           "id": "p_portia_munyai",
           "full_name": "Portia Munyai",
           "short_name": "Portia",
+          "pickup_area": "Ext 76",
+          "dropoff_area": "Sasol R71"
+        }
+      ],
+      "note": "Ext 76 dropoff"
+    },
+    {
+      "sequence": 3,
+      "type": "dropoff",
+      "name": "Sensory Vukeya dropoff",
+      "coordinates": [
+        29.3993861,
+        -23.8799718
+      ],
+      "passengers": [
+        {
+          "id": "p_sensory_vukeya",
+          "full_name": "Sensory Vukeya",
+          "short_name": "Sensory",
           "pickup_area": "Ext 76",
           "dropoff_area": "Sasol R71"
         }

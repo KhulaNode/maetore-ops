@@ -32,6 +32,24 @@
       "properties": {
         "sequence": 2,
         "type": "pickup",
+        "name": "MBT Florapark",
+        "passenger_count": 1,
+        "passengers": "Linah Molelemane",
+        "note": "Outbound pickup ordered by distance from R71"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.4754902,
+          -23.9133595
+        ]
+      },
+      "properties": {
+        "sequence": 3,
+        "type": "pickup",
         "name": "SSI Security",
         "passenger_count": 1,
         "passengers": "Johannes Ramoraswi",
@@ -43,35 +61,17 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.3998672,
-          -23.8791688
-        ]
-      },
-      "properties": {
-        "sequence": 3,
-        "type": "dropoff",
-        "name": "Johannes Ramoraswi dropoff",
-        "passenger_count": 1,
-        "passengers": "Johannes Ramoraswi",
-        "note": "Ext 76 dropoff"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          29.3993861,
-          -23.8799718
+          29.4068004,
+          -23.887007
         ]
       },
       "properties": {
         "sequence": 4,
         "type": "dropoff",
-        "name": "Sensory Vukeya dropoff",
+        "name": "Linah Molelemane dropoff",
         "passenger_count": 1,
-        "passengers": "Sensory Vukeya",
-        "note": "Ext 76 dropoff"
+        "passengers": "Linah Molelemane",
+        "note": "Ext 71 dropoff"
       }
     },
     {
@@ -89,6 +89,42 @@
         "name": "Portia Munyai dropoff",
         "passenger_count": 1,
         "passengers": "Portia Munyai",
+        "note": "Ext 76 dropoff"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.3998672,
+          -23.8791688
+        ]
+      },
+      "properties": {
+        "sequence": 6,
+        "type": "dropoff",
+        "name": "Johannes Ramoraswi dropoff",
+        "passenger_count": 1,
+        "passengers": "Johannes Ramoraswi",
+        "note": "Ext 76 dropoff"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.3993861,
+          -23.8799718
+        ]
+      },
+      "properties": {
+        "sequence": 7,
+        "type": "dropoff",
+        "name": "Sensory Vukeya dropoff",
+        "passenger_count": 1,
+        "passengers": "Sensory Vukeya",
         "note": "Ext 76 dropoff"
       }
     }

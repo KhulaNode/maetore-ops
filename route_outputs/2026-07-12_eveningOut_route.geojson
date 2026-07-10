@@ -25,16 +25,16 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.3993861,
-          -23.8799718
+          29.3969942,
+          -23.8827173
         ]
       },
       "properties": {
         "sequence": 2,
         "type": "dropoff",
-        "name": "Sensory Vukeya dropoff",
+        "name": "Portia Munyai dropoff",
         "passenger_count": 1,
-        "passengers": "Sensory Vukeya",
+        "passengers": "Portia Munyai",
         "note": "Ext 76 dropoff"
       }
     },
@@ -43,16 +43,16 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.3969942,
-          -23.8827173
+          29.3993861,
+          -23.8799718
         ]
       },
       "properties": {
         "sequence": 3,
         "type": "dropoff",
-        "name": "Portia Munyai dropoff",
+        "name": "Sensory Vukeya dropoff",
         "passenger_count": 1,
-        "passengers": "Portia Munyai",
+        "passengers": "Sensory Vukeya",
         "note": "Ext 76 dropoff"
       }
     }

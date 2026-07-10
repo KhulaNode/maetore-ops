@@ -50,6 +50,24 @@
       "properties": {
         "sequence": 3,
         "type": "pickup",
+        "name": "MBT Florapark",
+        "passenger_count": 1,
+        "passengers": "Linah Molelemane",
+        "note": "Outbound pickup ordered by distance from R71"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.4754902,
+          -23.9133595
+        ]
+      },
+      "properties": {
+        "sequence": 4,
+        "type": "pickup",
         "name": "SSI Security",
         "passenger_count": 1,
         "passengers": "Johannes Ramoraswi",
@@ -66,7 +84,7 @@
         ]
       },
       "properties": {
-        "sequence": 4,
+        "sequence": 5,
         "type": "dropoff",
         "name": "Khanyi Maluleka dropoff",
         "passenger_count": 1,
@@ -84,7 +102,7 @@
         ]
       },
       "properties": {
-        "sequence": 5,
+        "sequence": 6,
         "type": "dropoff",
         "name": "Rogers Pazinini dropoff",
         "passenger_count": 1,
@@ -97,12 +115,30 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          29.4068004,
+          -23.887007
+        ]
+      },
+      "properties": {
+        "sequence": 7,
+        "type": "dropoff",
+        "name": "Linah Molelemane dropoff",
+        "passenger_count": 1,
+        "passengers": "Linah Molelemane",
+        "note": "Ext 71 dropoff"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           29.3998672,
           -23.8791688
         ]
       },
       "properties": {
-        "sequence": 6,
+        "sequence": 8,
         "type": "dropoff",
         "name": "Johannes Ramoraswi dropoff",
         "passenger_count": 1,
@@ -120,7 +156,7 @@
         ]
       },
       "properties": {
-        "sequence": 7,
+        "sequence": 9,
         "type": "dropoff",
         "name": "Thlologelo Ledwaba dropoff",
         "passenger_count": 1,
@@ -138,7 +174,7 @@
         ]
       },
       "properties": {
-        "sequence": 8,
+        "sequence": 10,
         "type": "dropoff",
         "name": "Precious Mpyanyane dropoff",
         "passenger_count": 1,
@@ -156,7 +192,7 @@
         ]
       },
       "properties": {
-        "sequence": 9,
+        "sequence": 11,
         "type": "dropoff",
         "name": "Aubrey Ntini dropoff",
         "passenger_count": 1,

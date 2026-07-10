@@ -1,7 +1,7 @@
 {
   "date": "2026-07-04",
   "movement": "eveningOut",
-  "distance_engine": "haversine",
+  "distance_engine": "graphml_shortest_path",
   "rule_set": {
     "inbound": "order all eligible pickups and dropoffs furthest-to-closest to R71; never drop a passenger before pickup",
     "outbound": "order all eligible pickups and dropoffs closest-to-furthest from R71; never drop a passenger before pickup"
@@ -24,6 +24,14 @@
       ]
     },
     {
+      "id": "mbt_florapark",
+      "name": "MBT Florapark",
+      "coordinates": [
+        29.4754902,
+        -23.9133595
+      ]
+    },
+    {
       "id": "sasol_jorrisen",
       "name": "Sasol Jorrisen",
       "coordinates": [
@@ -32,7 +40,7 @@
       ]
     }
   ],
-  "total_distance_km": 20.537,
+  "total_distance_km": 25.087,
   "stops": [
     {
       "sequence": 1,
@@ -84,6 +92,25 @@
     {
       "sequence": 2,
       "type": "pickup",
+      "name": "MBT Florapark",
+      "coordinates": [
+        29.4754902,
+        -23.9133595
+      ],
+      "passengers": [
+        {
+          "id": "p_linah_molelemane",
+          "full_name": "Linah Molelemane",
+          "short_name": "Linah",
+          "pickup_area": "Ext 71",
+          "dropoff_area": "MBT Florapark"
+        }
+      ],
+      "note": "Outbound pickup ordered by distance from R71"
+    },
+    {
+      "sequence": 3,
+      "type": "pickup",
       "name": "SSI Security",
       "coordinates": [
         29.4754902,
@@ -101,7 +128,7 @@
       "note": "Outbound pickup ordered by distance from R71"
     },
     {
-      "sequence": 3,
+      "sequence": 4,
       "type": "dropoff",
       "name": "Khanyi Maluleka dropoff",
       "coordinates": [
@@ -120,7 +147,7 @@
       "note": "Ivy Park, Section 21 dropoff"
     },
     {
-      "sequence": 4,
+      "sequence": 5,
       "type": "dropoff",
       "name": "Rogers Pazinini dropoff",
       "coordinates": [
@@ -139,26 +166,26 @@
       "note": "Ext 44 dropoff"
     },
     {
-      "sequence": 5,
+      "sequence": 6,
       "type": "dropoff",
-      "name": "Johannes Ramoraswi dropoff",
+      "name": "Linah Molelemane dropoff",
       "coordinates": [
-        29.3998672,
-        -23.8791688
+        29.4068004,
+        -23.887007
       ],
       "passengers": [
         {
-          "id": "p_johannes_ramoraswi",
-          "full_name": "Johannes Ramoraswi",
-          "short_name": "Johannes",
-          "pickup_area": "Ext 76",
-          "dropoff_area": "SSI Security"
+          "id": "p_linah_molelemane",
+          "full_name": "Linah Molelemane",
+          "short_name": "Linah",
+          "pickup_area": "Ext 71",
+          "dropoff_area": "MBT Florapark"
         }
       ],
-      "note": "Ext 76 dropoff"
+      "note": "Ext 71 dropoff"
     },
     {
-      "sequence": 6,
+      "sequence": 7,
       "type": "dropoff",
       "name": "Portia Munyai dropoff",
       "coordinates": [
@@ -177,7 +204,26 @@
       "note": "Ext 76 dropoff"
     },
     {
-      "sequence": 7,
+      "sequence": 8,
+      "type": "dropoff",
+      "name": "Johannes Ramoraswi dropoff",
+      "coordinates": [
+        29.3998672,
+        -23.8791688
+      ],
+      "passengers": [
+        {
+          "id": "p_johannes_ramoraswi",
+          "full_name": "Johannes Ramoraswi",
+          "short_name": "Johannes",
+          "pickup_area": "Ext 76",
+          "dropoff_area": "SSI Security"
+        }
+      ],
+      "note": "Ext 76 dropoff"
+    },
+    {
+      "sequence": 9,
       "type": "dropoff",
       "name": "Thlologelo Ledwaba dropoff",
       "coordinates": [
@@ -196,7 +242,7 @@
       "note": "Seshego Zone 8 dropoff"
     },
     {
-      "sequence": 8,
+      "sequence": 10,
       "type": "dropoff",
       "name": "Aubrey Ntini dropoff",
       "coordinates": [

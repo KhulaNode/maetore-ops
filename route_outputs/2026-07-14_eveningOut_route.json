@@ -1,7 +1,7 @@
 {
   "date": "2026-07-14",
   "movement": "eveningOut",
-  "distance_engine": "haversine",
+  "distance_engine": "graphml_shortest_path",
   "rule_set": {
     "inbound": "order all eligible pickups and dropoffs furthest-to-closest to R71; never drop a passenger before pickup",
     "outbound": "order all eligible pickups and dropoffs closest-to-furthest from R71; never drop a passenger before pickup"
@@ -24,6 +24,14 @@
       ]
     },
     {
+      "id": "mbt_florapark",
+      "name": "MBT Florapark",
+      "coordinates": [
+        29.4754902,
+        -23.9133595
+      ]
+    },
+    {
       "id": "sasol_jorrisen",
       "name": "Sasol Jorrisen",
       "coordinates": [
@@ -32,7 +40,7 @@
       ]
     }
   ],
-  "total_distance_km": 20.219,
+  "total_distance_km": 26.6,
   "stops": [
     {
       "sequence": 1,

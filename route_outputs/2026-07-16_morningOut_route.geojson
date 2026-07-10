@@ -1,0 +1,42 @@
+{
+  "type": "FeatureCollection",
+  "name": "maetore_2026-07-16_morningOut_route",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.4754902,
+          -23.9133595
+        ]
+      },
+      "properties": {
+        "sequence": 1,
+        "type": "pickup",
+        "name": "MBT Florapark",
+        "passenger_count": 1,
+        "passengers": "Linah Molelemane",
+        "note": "Outbound pickup ordered by distance from R71"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.4068004,
+          -23.887007
+        ]
+      },
+      "properties": {
+        "sequence": 2,
+        "type": "dropoff",
+        "name": "Linah Molelemane dropoff",
+        "passenger_count": 1,
+        "passengers": "Linah Molelemane",
+        "note": "Ext 71 dropoff"
+      }
+    }
+  ]
+}

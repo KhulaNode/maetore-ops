@@ -1,7 +1,7 @@
 {
   "date": "2026-07-09",
   "movement": "morningIn",
-  "distance_engine": "haversine",
+  "distance_engine": "graphml_shortest_path",
   "rule_set": {
     "inbound": "order all eligible pickups and dropoffs furthest-to-closest to R71; never drop a passenger before pickup",
     "outbound": "order all eligible pickups and dropoffs closest-to-furthest from R71; never drop a passenger before pickup"
@@ -24,6 +24,14 @@
       ]
     },
     {
+      "id": "mbt_florapark",
+      "name": "MBT Florapark",
+      "coordinates": [
+        29.4754902,
+        -23.9133595
+      ]
+    },
+    {
       "id": "sasol_jorrisen",
       "name": "Sasol Jorrisen",
       "coordinates": [
@@ -32,29 +40,10 @@
       ]
     }
   ],
-  "total_distance_km": 13.738,
+  "total_distance_km": 18.024,
   "stops": [
     {
       "sequence": 1,
-      "type": "pickup",
-      "name": "Portia Munyai pickup",
-      "coordinates": [
-        29.3969942,
-        -23.8827173
-      ],
-      "passengers": [
-        {
-          "id": "p_portia_munyai",
-          "full_name": "Portia Munyai",
-          "short_name": "Portia",
-          "pickup_area": "Ext 76",
-          "dropoff_area": "Sasol R71"
-        }
-      ],
-      "note": "Ext 76 pickup"
-    },
-    {
-      "sequence": 2,
       "type": "pickup",
       "name": "Sensory Vukeya pickup",
       "coordinates": [
@@ -73,7 +62,7 @@
       "note": "Ext 76 pickup"
     },
     {
-      "sequence": 3,
+      "sequence": 2,
       "type": "pickup",
       "name": "Johannes Ramoraswi pickup",
       "coordinates": [
@@ -92,7 +81,64 @@
       "note": "Ext 76 pickup"
     },
     {
+      "sequence": 3,
+      "type": "pickup",
+      "name": "Portia Munyai pickup",
+      "coordinates": [
+        29.3969942,
+        -23.8827173
+      ],
+      "passengers": [
+        {
+          "id": "p_portia_munyai",
+          "full_name": "Portia Munyai",
+          "short_name": "Portia",
+          "pickup_area": "Ext 76",
+          "dropoff_area": "Sasol R71"
+        }
+      ],
+      "note": "Ext 76 pickup"
+    },
+    {
       "sequence": 4,
+      "type": "pickup",
+      "name": "Linah Molelemane pickup",
+      "coordinates": [
+        29.4068004,
+        -23.887007
+      ],
+      "passengers": [
+        {
+          "id": "p_linah_molelemane",
+          "full_name": "Linah Molelemane",
+          "short_name": "Linah",
+          "pickup_area": "Ext 71",
+          "dropoff_area": "MBT Florapark"
+        }
+      ],
+      "note": "Ext 71 pickup"
+    },
+    {
+      "sequence": 5,
+      "type": "dropoff",
+      "name": "MBT Florapark",
+      "coordinates": [
+        29.4754902,
+        -23.9133595
+      ],
+      "passengers": [
+        {
+          "id": "p_linah_molelemane",
+          "full_name": "Linah Molelemane",
+          "short_name": "Linah",
+          "pickup_area": "Ext 71",
+          "dropoff_area": "MBT Florapark"
+        }
+      ],
+      "note": "Inbound dropoff ordered by distance to R71"
+    },
+    {
+      "sequence": 6,
       "type": "dropoff",
       "name": "SSI Security",
       "coordinates": [
@@ -111,7 +157,7 @@
       "note": "Inbound dropoff ordered by distance to R71"
     },
     {
-      "sequence": 5,
+      "sequence": 7,
       "type": "pickup",
       "name": "Asher Malungani pickup",
       "coordinates": [
@@ -130,7 +176,7 @@
       "note": "Serala View pickup"
     },
     {
-      "sequence": 6,
+      "sequence": 8,
       "type": "dropoff",
       "name": "Sasol R71",
       "coordinates": [

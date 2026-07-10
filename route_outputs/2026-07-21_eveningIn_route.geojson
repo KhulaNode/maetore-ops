@@ -1,0 +1,42 @@
+{
+  "type": "FeatureCollection",
+  "name": "maetore_2026-07-21_eveningIn_route",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.3505369,
+          -23.8195461
+        ]
+      },
+      "properties": {
+        "sequence": 1,
+        "type": "pickup",
+        "name": "Happy Choeu pickup",
+        "passenger_count": 1,
+        "passengers": "Happy Choeu",
+        "note": "Spook Park pickup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.4593845,
+          -23.9052611
+        ]
+      },
+      "properties": {
+        "sequence": 2,
+        "type": "dropoff",
+        "name": "Sasol Jorrisen",
+        "passenger_count": 1,
+        "passengers": "Happy Choeu",
+        "note": "Inbound dropoff ordered by distance to R71"
+      }
+    }
+  ]
+}

@@ -30,6 +30,11 @@ SPECIAL_DESTINATIONS = {
         "name": "SSI Security",
         "coordinates": [29.4754902, -23.9133595],
     },
+    "mbt_florapark": {
+        "id": "mbt_florapark",
+        "name": "MBT Florapark",
+        "coordinates": [29.4754902, -23.9133595],
+    },
     "sasol_jorrisen": {
         "id": "sasol_jorrisen",
         "name": "Sasol Jorrisen",
@@ -154,6 +159,8 @@ def normalize_area(value: str) -> str:
 def destination_key(dropoff_area: str) -> str:
     normalized = normalize_area(dropoff_area)
 
+    if "mbt" in normalized and "florapark" in normalized:
+        return "mbt_florapark"
     if "ssi" in normalized:
         return "ssi_security"
     if "jorrisen" in normalized or "jorissen" in normalized:

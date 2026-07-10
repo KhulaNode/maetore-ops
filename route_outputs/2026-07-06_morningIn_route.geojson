@@ -61,16 +61,52 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          29.4068004,
+          -23.887007
+        ]
+      },
+      "properties": {
+        "sequence": 4,
+        "type": "pickup",
+        "name": "Linah Molelemane pickup",
+        "passenger_count": 1,
+        "passengers": "Linah Molelemane",
+        "note": "Ext 71 pickup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           29.4593845,
           -23.9052611
         ]
       },
       "properties": {
-        "sequence": 4,
+        "sequence": 5,
         "type": "dropoff",
         "name": "Sasol Jorrisen",
         "passenger_count": 1,
         "passengers": "Happy Choeu",
+        "note": "Inbound dropoff ordered by distance to R71"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.4754902,
+          -23.9133595
+        ]
+      },
+      "properties": {
+        "sequence": 6,
+        "type": "dropoff",
+        "name": "MBT Florapark",
+        "passenger_count": 1,
+        "passengers": "Linah Molelemane",
         "note": "Inbound dropoff ordered by distance to R71"
       }
     },
@@ -84,7 +120,7 @@
         ]
       },
       "properties": {
-        "sequence": 5,
+        "sequence": 7,
         "type": "pickup",
         "name": "Asher Malungani pickup",
         "passenger_count": 1,
@@ -102,7 +138,7 @@
         ]
       },
       "properties": {
-        "sequence": 6,
+        "sequence": 8,
         "type": "dropoff",
         "name": "Sasol R71",
         "passenger_count": 3,

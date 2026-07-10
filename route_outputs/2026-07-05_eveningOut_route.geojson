@@ -25,12 +25,48 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          29.4754902,
+          -23.9133595
+        ]
+      },
+      "properties": {
+        "sequence": 2,
+        "type": "pickup",
+        "name": "MBT Florapark",
+        "passenger_count": 1,
+        "passengers": "Linah Molelemane",
+        "note": "Outbound pickup ordered by distance from R71"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.4068004,
+          -23.887007
+        ]
+      },
+      "properties": {
+        "sequence": 3,
+        "type": "dropoff",
+        "name": "Linah Molelemane dropoff",
+        "passenger_count": 1,
+        "passengers": "Linah Molelemane",
+        "note": "Ext 71 dropoff"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           29.3969942,
           -23.8827173
         ]
       },
       "properties": {
-        "sequence": 2,
+        "sequence": 4,
         "type": "dropoff",
         "name": "Portia Munyai dropoff",
         "passenger_count": 1,
@@ -48,7 +84,7 @@
         ]
       },
       "properties": {
-        "sequence": 3,
+        "sequence": 5,
         "type": "dropoff",
         "name": "Lesiba Choeu dropoff",
         "passenger_count": 1,

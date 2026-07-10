@@ -6,6 +6,26 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          29.4068004,
+          -23.887007
+        ]
+      },
+      "properties": {
+        "passenger_id": "p_linah_molelemane",
+        "full_name": "Linah Molelemane",
+        "short_name": "Linah",
+        "pickup_area": "Ext 71",
+        "dropoff_area": "MBT Florapark",
+        "status": "active",
+        "phone": "+27 76 692 0908",
+        "email": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           29.3993861,
           -23.8799718
         ]

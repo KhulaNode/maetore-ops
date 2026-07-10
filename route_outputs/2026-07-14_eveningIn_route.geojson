@@ -25,12 +25,48 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          29.4068004,
+          -23.887007
+        ]
+      },
+      "properties": {
+        "sequence": 2,
+        "type": "pickup",
+        "name": "Linah Molelemane pickup",
+        "passenger_count": 1,
+        "passengers": "Linah Molelemane",
+        "note": "Ext 71 pickup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.4754902,
+          -23.9133595
+        ]
+      },
+      "properties": {
+        "sequence": 3,
+        "type": "dropoff",
+        "name": "MBT Florapark",
+        "passenger_count": 1,
+        "passengers": "Linah Molelemane",
+        "note": "Inbound dropoff ordered by distance to R71"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           29.5160153,
           -23.8978861
         ]
       },
       "properties": {
-        "sequence": 2,
+        "sequence": 4,
         "type": "dropoff",
         "name": "Sasol R71",
         "passenger_count": 1,

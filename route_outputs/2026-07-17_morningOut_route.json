@@ -1,0 +1,84 @@
+{
+  "date": "2026-07-17",
+  "movement": "morningOut",
+  "distance_engine": "graphml_shortest_path",
+  "rule_set": {
+    "inbound": "order all eligible pickups and dropoffs furthest-to-closest to R71; never drop a passenger before pickup",
+    "outbound": "order all eligible pickups and dropoffs closest-to-furthest from R71; never drop a passenger before pickup"
+  },
+  "r71": {
+    "id": "r71",
+    "name": "Sasol R71",
+    "coordinates": [
+      29.5160153,
+      -23.8978861
+    ]
+  },
+  "special_destinations": [
+    {
+      "id": "ssi_security",
+      "name": "SSI Security",
+      "coordinates": [
+        29.4754902,
+        -23.9133595
+      ]
+    },
+    {
+      "id": "mbt_florapark",
+      "name": "MBT Florapark",
+      "coordinates": [
+        29.4754902,
+        -23.9133595
+      ]
+    },
+    {
+      "id": "sasol_jorrisen",
+      "name": "Sasol Jorrisen",
+      "coordinates": [
+        29.4593845,
+        -23.9052611
+      ]
+    }
+  ],
+  "total_distance_km": 9.385,
+  "stops": [
+    {
+      "sequence": 1,
+      "type": "pickup",
+      "name": "MBT Florapark",
+      "coordinates": [
+        29.4754902,
+        -23.9133595
+      ],
+      "passengers": [
+        {
+          "id": "p_linah_molelemane",
+          "full_name": "Linah Molelemane",
+          "short_name": "Linah",
+          "pickup_area": "Ext 71",
+          "dropoff_area": "MBT Florapark"
+        }
+      ],
+      "note": "Outbound pickup ordered by distance from R71"
+    },
+    {
+      "sequence": 2,
+      "type": "dropoff",
+      "name": "Linah Molelemane dropoff",
+      "coordinates": [
+        29.4068004,
+        -23.887007
+      ],
+      "passengers": [
+        {
+          "id": "p_linah_molelemane",
+          "full_name": "Linah Molelemane",
+          "short_name": "Linah",
+          "pickup_area": "Ext 71",
+          "dropoff_area": "MBT Florapark"
+        }
+      ],
+      "note": "Ext 71 dropoff"
+    }
+  ]
+}

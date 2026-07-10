@@ -1,7 +1,7 @@
 {
   "date": "2026-07-10",
   "movement": "morningOut",
-  "distance_engine": "haversine",
+  "distance_engine": "graphml_shortest_path",
   "rule_set": {
     "inbound": "order all eligible pickups and dropoffs furthest-to-closest to R71; never drop a passenger before pickup",
     "outbound": "order all eligible pickups and dropoffs closest-to-furthest from R71; never drop a passenger before pickup"
@@ -24,6 +24,14 @@
       ]
     },
     {
+      "id": "mbt_florapark",
+      "name": "MBT Florapark",
+      "coordinates": [
+        29.4754902,
+        -23.9133595
+      ]
+    },
+    {
       "id": "sasol_jorrisen",
       "name": "Sasol Jorrisen",
       "coordinates": [
@@ -32,7 +40,7 @@
       ]
     }
   ],
-  "total_distance_km": 19.956,
+  "total_distance_km": 28.429,
   "stops": [
     {
       "sequence": 1,
@@ -76,6 +84,25 @@
     },
     {
       "sequence": 2,
+      "type": "pickup",
+      "name": "Sasol Jorrisen",
+      "coordinates": [
+        29.4593845,
+        -23.9052611
+      ],
+      "passengers": [
+        {
+          "id": "p_happy_choeu",
+          "full_name": "Happy Choeu",
+          "short_name": "Happy",
+          "pickup_area": "Spook Park",
+          "dropoff_area": "Sasol Jorrisen"
+        }
+      ],
+      "note": "Outbound pickup ordered by distance from R71"
+    },
+    {
+      "sequence": 3,
       "type": "dropoff",
       "name": "Khanyi Maluleka dropoff",
       "coordinates": [
@@ -94,7 +121,7 @@
       "note": "Ivy Park, Section 21 dropoff"
     },
     {
-      "sequence": 3,
+      "sequence": 4,
       "type": "dropoff",
       "name": "Rogers Pazinini dropoff",
       "coordinates": [
@@ -113,7 +140,7 @@
       "note": "Ext 44 dropoff"
     },
     {
-      "sequence": 4,
+      "sequence": 5,
       "type": "dropoff",
       "name": "Thlologelo Ledwaba dropoff",
       "coordinates": [
@@ -132,7 +159,7 @@
       "note": "Seshego Zone 8 dropoff"
     },
     {
-      "sequence": 5,
+      "sequence": 6,
       "type": "dropoff",
       "name": "Aubrey Ntini dropoff",
       "coordinates": [
@@ -149,6 +176,25 @@
         }
       ],
       "note": "Seshego Zone 5 dropoff"
+    },
+    {
+      "sequence": 7,
+      "type": "dropoff",
+      "name": "Happy Choeu dropoff",
+      "coordinates": [
+        29.3505369,
+        -23.8195461
+      ],
+      "passengers": [
+        {
+          "id": "p_happy_choeu",
+          "full_name": "Happy Choeu",
+          "short_name": "Happy",
+          "pickup_area": "Spook Park",
+          "dropoff_area": "Sasol Jorrisen"
+        }
+      ],
+      "note": "Spook Park dropoff"
     }
   ]
 }

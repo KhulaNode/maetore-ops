@@ -1,7 +1,7 @@
 {
   "date": "2026-07-13",
   "movement": "eveningOut",
-  "distance_engine": "haversine",
+  "distance_engine": "graphml_shortest_path",
   "rule_set": {
     "inbound": "order all eligible pickups and dropoffs furthest-to-closest to R71; never drop a passenger before pickup",
     "outbound": "order all eligible pickups and dropoffs closest-to-furthest from R71; never drop a passenger before pickup"
@@ -24,6 +24,14 @@
       ]
     },
     {
+      "id": "mbt_florapark",
+      "name": "MBT Florapark",
+      "coordinates": [
+        29.4754902,
+        -23.9133595
+      ]
+    },
+    {
       "id": "sasol_jorrisen",
       "name": "Sasol Jorrisen",
       "coordinates": [
@@ -32,7 +40,7 @@
       ]
     }
   ],
-  "total_distance_km": 20.742,
+  "total_distance_km": 26.624,
   "stops": [
     {
       "sequence": 1,
@@ -167,25 +175,6 @@
     {
       "sequence": 6,
       "type": "dropoff",
-      "name": "Johannes Ramoraswi dropoff",
-      "coordinates": [
-        29.3998672,
-        -23.8791688
-      ],
-      "passengers": [
-        {
-          "id": "p_johannes_ramoraswi",
-          "full_name": "Johannes Ramoraswi",
-          "short_name": "Johannes",
-          "pickup_area": "Ext 76",
-          "dropoff_area": "SSI Security"
-        }
-      ],
-      "note": "Ext 76 dropoff"
-    },
-    {
-      "sequence": 7,
-      "type": "dropoff",
       "name": "Portia Munyai dropoff",
       "coordinates": [
         29.3969942,
@@ -198,6 +187,25 @@
           "short_name": "Portia",
           "pickup_area": "Ext 76",
           "dropoff_area": "Sasol R71"
+        }
+      ],
+      "note": "Ext 76 dropoff"
+    },
+    {
+      "sequence": 7,
+      "type": "dropoff",
+      "name": "Johannes Ramoraswi dropoff",
+      "coordinates": [
+        29.3998672,
+        -23.8791688
+      ],
+      "passengers": [
+        {
+          "id": "p_johannes_ramoraswi",
+          "full_name": "Johannes Ramoraswi",
+          "short_name": "Johannes",
+          "pickup_area": "Ext 76",
+          "dropoff_area": "SSI Security"
         }
       ],
       "note": "Ext 76 dropoff"

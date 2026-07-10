@@ -1,7 +1,7 @@
 {
   "date": "2026-07-11",
   "movement": "morningOut",
-  "distance_engine": "haversine",
+  "distance_engine": "graphml_shortest_path",
   "rule_set": {
     "inbound": "order all eligible pickups and dropoffs furthest-to-closest to R71; never drop a passenger before pickup",
     "outbound": "order all eligible pickups and dropoffs closest-to-furthest from R71; never drop a passenger before pickup"
@@ -24,6 +24,14 @@
       ]
     },
     {
+      "id": "mbt_florapark",
+      "name": "MBT Florapark",
+      "coordinates": [
+        29.4754902,
+        -23.9133595
+      ]
+    },
+    {
       "id": "sasol_jorrisen",
       "name": "Sasol Jorrisen",
       "coordinates": [
@@ -32,7 +40,7 @@
       ]
     }
   ],
-  "total_distance_km": 18.925,
+  "total_distance_km": 23.056,
   "stops": [
     {
       "sequence": 1,
@@ -55,6 +63,25 @@
     },
     {
       "sequence": 2,
+      "type": "pickup",
+      "name": "Sasol Jorrisen",
+      "coordinates": [
+        29.4593845,
+        -23.9052611
+      ],
+      "passengers": [
+        {
+          "id": "p_happy_choeu",
+          "full_name": "Happy Choeu",
+          "short_name": "Happy",
+          "pickup_area": "Spook Park",
+          "dropoff_area": "Sasol Jorrisen"
+        }
+      ],
+      "note": "Outbound pickup ordered by distance from R71"
+    },
+    {
+      "sequence": 3,
       "type": "dropoff",
       "name": "Lesiba Choeu dropoff",
       "coordinates": [
@@ -68,6 +95,25 @@
           "short_name": "Lesiba",
           "pickup_area": "Spook Park",
           "dropoff_area": "Sasol R71"
+        }
+      ],
+      "note": "Spook Park dropoff"
+    },
+    {
+      "sequence": 4,
+      "type": "dropoff",
+      "name": "Happy Choeu dropoff",
+      "coordinates": [
+        29.3505369,
+        -23.8195461
+      ],
+      "passengers": [
+        {
+          "id": "p_happy_choeu",
+          "full_name": "Happy Choeu",
+          "short_name": "Happy",
+          "pickup_area": "Spook Park",
+          "dropoff_area": "Sasol Jorrisen"
         }
       ],
       "note": "Spook Park dropoff"

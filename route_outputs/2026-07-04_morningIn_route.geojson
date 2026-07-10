@@ -43,30 +43,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.3969942,
-          -23.8827173
-        ]
-      },
-      "properties": {
-        "sequence": 3,
-        "type": "pickup",
-        "name": "Portia Munyai pickup",
-        "passenger_count": 1,
-        "passengers": "Portia Munyai",
-        "note": "Ext 76 pickup"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           29.3998672,
           -23.8791688
         ]
       },
       "properties": {
-        "sequence": 4,
+        "sequence": 3,
         "type": "pickup",
         "name": "Johannes Ramoraswi pickup",
         "passenger_count": 1,
@@ -79,12 +61,48 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          29.3969942,
+          -23.8827173
+        ]
+      },
+      "properties": {
+        "sequence": 4,
+        "type": "pickup",
+        "name": "Portia Munyai pickup",
+        "passenger_count": 1,
+        "passengers": "Portia Munyai",
+        "note": "Ext 76 pickup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.4068004,
+          -23.887007
+        ]
+      },
+      "properties": {
+        "sequence": 5,
+        "type": "pickup",
+        "name": "Linah Molelemane pickup",
+        "passenger_count": 1,
+        "passengers": "Linah Molelemane",
+        "note": "Ext 71 pickup"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           29.4104107,
           -23.8923877
         ]
       },
       "properties": {
-        "sequence": 5,
+        "sequence": 6,
         "type": "pickup",
         "name": "Rogers Pazinini pickup",
         "passenger_count": 1,
@@ -102,7 +120,7 @@
         ]
       },
       "properties": {
-        "sequence": 6,
+        "sequence": 7,
         "type": "pickup",
         "name": "Khanyi Maluleka pickup",
         "passenger_count": 1,
@@ -120,7 +138,25 @@
         ]
       },
       "properties": {
-        "sequence": 7,
+        "sequence": 8,
+        "type": "dropoff",
+        "name": "MBT Florapark",
+        "passenger_count": 1,
+        "passengers": "Linah Molelemane",
+        "note": "Inbound dropoff ordered by distance to R71"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.4754902,
+          -23.9133595
+        ]
+      },
+      "properties": {
+        "sequence": 9,
         "type": "dropoff",
         "name": "SSI Security",
         "passenger_count": 1,
@@ -138,7 +174,7 @@
         ]
       },
       "properties": {
-        "sequence": 8,
+        "sequence": 10,
         "type": "dropoff",
         "name": "Sasol R71",
         "passenger_count": 5,
