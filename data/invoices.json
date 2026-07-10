@@ -11,17 +11,6 @@
     "paymentPageUrl": "https://paystack.shop/pay/g4cfbgg0ry"
   },
   {
-    "id": "inv_p_frans_mokgehle_2026w26",
-    "passengerId": "p_frans_mokgehle",
-    "periodStart": "2026-06-15",
-    "periodEnd": "2026-06-28",
-    "dueDate": "2026-06-28",
-    "amountDue": 60000,
-    "amountPaid": 0,
-    "status": "unpaid",
-    "paymentPageUrl": "https://paystack.shop/pay/g4cfbgg0ry"
-  },
-  {
     "id": "inv_p_hlologelo_ledwaba_2026w26",
     "passengerId": "p_hlologelo_ledwaba",
     "periodStart": "2026-06-15",

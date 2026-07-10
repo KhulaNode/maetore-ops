@@ -1,7 +1,7 @@
 {
   "date": "2026-07-08",
   "movement": "eveningOut",
-  "distance_engine": "graphml_shortest_path",
+  "distance_engine": "haversine",
   "rule_set": {
     "inbound": "order all eligible pickups and dropoffs furthest-to-closest to R71; never drop a passenger before pickup",
     "outbound": "order all eligible pickups and dropoffs closest-to-furthest from R71; never drop a passenger before pickup"
@@ -32,7 +32,7 @@
       ]
     }
   ],
-  "total_distance_km": 28.096,
+  "total_distance_km": 21.538,
   "stops": [
     {
       "sequence": 1,
@@ -48,16 +48,14 @@
           "full_name": "Lesiba Choeu",
           "short_name": "Lesiba",
           "pickup_area": "Spook Park",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Team C"
+          "dropoff_area": "Sasol R71"
         },
         {
           "id": "p_asher_malungani",
           "full_name": "Asher Malungani",
           "short_name": "Asher",
           "pickup_area": "Serala View",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Floater"
+          "dropoff_area": "Sasol R71"
         }
       ],
       "note": "Outbound pickup ordered by distance from R71"
@@ -76,8 +74,7 @@
           "full_name": "Asher Malungani",
           "short_name": "Asher",
           "pickup_area": "Serala View",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Floater"
+          "dropoff_area": "Sasol R71"
         }
       ],
       "note": "Serala View dropoff"
@@ -96,8 +93,7 @@
           "full_name": "Johannes Ramoraswi",
           "short_name": "Johannes",
           "pickup_area": "Ext 76",
-          "dropoff_area": "SSI Security",
-          "group_name": "SSI Security"
+          "dropoff_area": "SSI Security"
         }
       ],
       "note": "Outbound pickup ordered by distance from R71"
@@ -116,8 +112,7 @@
           "full_name": "Johannes Ramoraswi",
           "short_name": "Johannes",
           "pickup_area": "Ext 76",
-          "dropoff_area": "SSI Security",
-          "group_name": "SSI Security"
+          "dropoff_area": "SSI Security"
         }
       ],
       "note": "Ext 76 dropoff"
@@ -136,8 +131,7 @@
           "full_name": "Lesiba Choeu",
           "short_name": "Lesiba",
           "pickup_area": "Spook Park",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Team C"
+          "dropoff_area": "Sasol R71"
         }
       ],
       "note": "Spook Park dropoff"

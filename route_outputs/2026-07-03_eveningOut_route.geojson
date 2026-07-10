@@ -97,16 +97,16 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.3969942,
-          -23.8827173
+          29.3998672,
+          -23.8791688
         ]
       },
       "properties": {
         "sequence": 6,
         "type": "dropoff",
-        "name": "Portia Munyai dropoff",
+        "name": "Johannes Ramoraswi dropoff",
         "passenger_count": 1,
-        "passengers": "Portia Munyai",
+        "passengers": "Johannes Ramoraswi",
         "note": "Ext 76 dropoff"
       }
     },
@@ -115,16 +115,16 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.3998672,
-          -23.8791688
+          29.3969942,
+          -23.8827173
         ]
       },
       "properties": {
         "sequence": 7,
         "type": "dropoff",
-        "name": "Johannes Ramoraswi dropoff",
+        "name": "Portia Munyai dropoff",
         "passenger_count": 1,
-        "passengers": "Johannes Ramoraswi",
+        "passengers": "Portia Munyai",
         "note": "Ext 76 dropoff"
       }
     },

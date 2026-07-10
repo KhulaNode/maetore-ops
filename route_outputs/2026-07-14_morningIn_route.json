@@ -1,7 +1,7 @@
 {
   "date": "2026-07-14",
   "movement": "morningIn",
-  "distance_engine": "graphml_shortest_path",
+  "distance_engine": "haversine",
   "rule_set": {
     "inbound": "order all eligible pickups and dropoffs furthest-to-closest to R71; never drop a passenger before pickup",
     "outbound": "order all eligible pickups and dropoffs closest-to-furthest from R71; never drop a passenger before pickup"
@@ -32,7 +32,7 @@
       ]
     }
   ],
-  "total_distance_km": 26.31,
+  "total_distance_km": 20.219,
   "stops": [
     {
       "sequence": 1,
@@ -48,8 +48,7 @@
           "full_name": "Aubrey Ntini",
           "short_name": "Aubrey",
           "pickup_area": "Seshego Zone 5",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Team B"
+          "dropoff_area": "Sasol R71"
         }
       ],
       "note": "Seshego Zone 5 pickup"
@@ -68,8 +67,7 @@
           "full_name": "Thlologelo Ledwaba",
           "short_name": "Thlologelo",
           "pickup_area": "Seshego Zone 8",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Team B"
+          "dropoff_area": "Sasol R71"
         }
       ],
       "note": "Seshego Zone 8 pickup"
@@ -88,8 +86,7 @@
           "full_name": "Johannes Ramoraswi",
           "short_name": "Johannes",
           "pickup_area": "Ext 76",
-          "dropoff_area": "SSI Security",
-          "group_name": "SSI Security"
+          "dropoff_area": "SSI Security"
         }
       ],
       "note": "Ext 76 pickup"
@@ -108,8 +105,7 @@
           "full_name": "Rogers Pazinini",
           "short_name": "Rogers",
           "pickup_area": "Ext 44",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Team B"
+          "dropoff_area": "Sasol R71"
         }
       ],
       "note": "Ext 44 pickup"
@@ -128,8 +124,7 @@
           "full_name": "Khanyi Maluleka",
           "short_name": "Khanyi",
           "pickup_area": "Ivy Park, Section 21",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Team B"
+          "dropoff_area": "Sasol R71"
         }
       ],
       "note": "Ivy Park, Section 21 pickup"
@@ -148,8 +143,7 @@
           "full_name": "Johannes Ramoraswi",
           "short_name": "Johannes",
           "pickup_area": "Ext 76",
-          "dropoff_area": "SSI Security",
-          "group_name": "SSI Security"
+          "dropoff_area": "SSI Security"
         }
       ],
       "note": "Inbound dropoff ordered by distance to R71"
@@ -168,8 +162,7 @@
           "full_name": "Asher Malungani",
           "short_name": "Asher",
           "pickup_area": "Serala View",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Floater"
+          "dropoff_area": "Sasol R71"
         }
       ],
       "note": "Serala View pickup"
@@ -188,40 +181,35 @@
           "full_name": "Thlologelo Ledwaba",
           "short_name": "Thlologelo",
           "pickup_area": "Seshego Zone 8",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Team B"
+          "dropoff_area": "Sasol R71"
         },
         {
           "id": "p_rogers_pazinini",
           "full_name": "Rogers Pazinini",
           "short_name": "Rogers",
           "pickup_area": "Ext 44",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Team B"
+          "dropoff_area": "Sasol R71"
         },
         {
           "id": "p_aubrey_ntini",
           "full_name": "Aubrey Ntini",
           "short_name": "Aubrey",
           "pickup_area": "Seshego Zone 5",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Team B"
+          "dropoff_area": "Sasol R71"
         },
         {
           "id": "p_khanyi_maluleka",
           "full_name": "Khanyi Maluleka",
           "short_name": "Khanyi",
           "pickup_area": "Ivy Park, Section 21",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Team B"
+          "dropoff_area": "Sasol R71"
         },
         {
           "id": "p_asher_malungani",
           "full_name": "Asher Malungani",
           "short_name": "Asher",
           "pickup_area": "Serala View",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Floater"
+          "dropoff_area": "Sasol R71"
         }
       ],
       "note": "Inbound dropoff ordered by distance to R71"

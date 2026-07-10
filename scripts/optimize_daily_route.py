@@ -52,7 +52,6 @@ class Passenger:
     short_name: str
     pickup_area: str
     dropoff_area: str
-    group_name: str
     coordinates: list[float]
 
 
@@ -215,7 +214,6 @@ def passengers_by_id(home_locations: dict) -> dict[str, Passenger]:
             short_name=props.get("short_name") or props.get("full_name") or passenger_id,
             pickup_area=props.get("pickup_area") or "",
             dropoff_area=props.get("dropoff_area") or "",
-            group_name=props.get("group_name") or "",
             coordinates=[float(coordinates[0]), float(coordinates[1])],
         )
 
@@ -400,7 +398,6 @@ def stop_to_dict(stop: Stop, sequence: int, previous: Stop | None, engine: Dista
                 "short_name": passenger.short_name,
                 "pickup_area": passenger.pickup_area,
                 "dropoff_area": passenger.dropoff_area,
-                "group_name": passenger.group_name,
             }
             for passenger in stop.passengers
         ],

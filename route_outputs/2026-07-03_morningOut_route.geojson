@@ -15,8 +15,8 @@
         "sequence": 1,
         "type": "pickup",
         "name": "Sasol R71",
-        "passenger_count": 2,
-        "passengers": "Sensory Vukeya, Frans Mokgehle",
+        "passenger_count": 1,
+        "passengers": "Sensory Vukeya",
         "note": "Outbound pickup ordered by distance from R71"
       }
     },
@@ -43,30 +43,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.4210221,
-          -23.8860013
-        ]
-      },
-      "properties": {
-        "sequence": 3,
-        "type": "dropoff",
-        "name": "Frans Mokgehle dropoff",
-        "passenger_count": 1,
-        "passengers": "Frans Mokgehle",
-        "note": "Ext 78 dropoff"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           29.3993861,
           -23.8799718
         ]
       },
       "properties": {
-        "sequence": 4,
+        "sequence": 3,
         "type": "dropoff",
         "name": "Sensory Vukeya dropoff",
         "passenger_count": 1,
@@ -84,7 +66,7 @@
         ]
       },
       "properties": {
-        "sequence": 5,
+        "sequence": 4,
         "type": "dropoff",
         "name": "Happy Choeu dropoff",
         "passenger_count": 1,

@@ -43,16 +43,16 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.3998672,
-          -23.8791688
+          29.3969942,
+          -23.8827173
         ]
       },
       "properties": {
         "sequence": 3,
         "type": "pickup",
-        "name": "Johannes Ramoraswi pickup",
+        "name": "Portia Munyai pickup",
         "passenger_count": 1,
-        "passengers": "Johannes Ramoraswi",
+        "passengers": "Portia Munyai",
         "note": "Ext 76 pickup"
       }
     },
@@ -61,16 +61,16 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.3969942,
-          -23.8827173
+          29.3998672,
+          -23.8791688
         ]
       },
       "properties": {
         "sequence": 4,
         "type": "pickup",
-        "name": "Portia Munyai pickup",
+        "name": "Johannes Ramoraswi pickup",
         "passenger_count": 1,
-        "passengers": "Portia Munyai",
+        "passengers": "Johannes Ramoraswi",
         "note": "Ext 76 pickup"
       }
     },

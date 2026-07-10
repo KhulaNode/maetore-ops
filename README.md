@@ -16,11 +16,16 @@ A lightweight HTML/CSS/JS single-page app for Sasol R71 Staff Transport.
 - Payment page link to Paystack
 - DynamoDB-ready JSON structure
 
-## Shift interpretation
+## Shift interpretation and transport rules
 
-- `D` day shift = Morning In + Evening Out
-- `N` night shift = Evening In + Morning Out
-- `OFF` = no trip
+- `D` day shift = **Morning In** and **Evening Out** on the roster date.
+- `N` night shift starts with **Evening In** on the roster date and ends with **Morning Out** on the following calendar date.
+- For consecutive `N` dates, the first `N` has Evening In only; each middle `N` date has Morning Out (from the previous night) and Evening In (for the new night).
+- The date after the final `N` has Morning Out only, even when that roster date is marked `OFF`.
+- `OFF` = no trip, unless it is carrying the Morning Out after a preceding `N` shift.
+- `D/S` is treated as a day shift for its own transport (Morning In + Evening Out). If it immediately follows an `N`, it also retains that night shift's Morning Out.
+
+These rules are applied per passenger and date. Do not place a Morning Out on the same date as the first night shift unless that passenger also worked an `N` shift the previous night.
 
 ## Route ordering script
 

@@ -367,13 +367,12 @@ tbody td:first-child {
 
 .dispatch-layout {
   display: grid;
-  grid-template-columns: minmax(360px, 0.85fr) minmax(0, 1.15fr);
+  grid-template-columns: 1fr;
   gap: 14px;
   align-items: start;
 }
 
-.dispatch-manifest,
-.dispatch-map-panel {
+.dispatch-manifest {
   padding: 18px;
 }
 
@@ -478,81 +477,7 @@ button:disabled:hover {
   border-color: var(--line-strong);
 }
 
-.dispatch-map {
-  height: min(58vh, 560px);
-  min-height: 420px;
-  background: #d8e3df;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  overflow: hidden;
-}
 
-.pickup-marker {
-  display: grid !important;
-  place-items: center;
-  width: 24px !important;
-  height: 24px !important;
-  background: white;
-  border: 2px solid rgba(6, 42, 49, 0.2);
-  box-shadow: 0 2px 6px rgba(6, 42, 49, 0.18);
-  border-radius: 50%;
-  font-size: 10px;
-  font-weight: 800;
-  line-height: 1;
-  color: var(--deep);
-}
-
-.pickup-marker-pickup {
-  border-color: var(--teal);
-  color: var(--teal);
-}
-
-.pickup-marker-dropoff {
-  border-color: var(--gold);
-  color: #765114;
-}
-
-.pickup-marker span {
-  display: block;
-  line-height: 1;
-}
-
-.pickup-marker-grouped {
-  width: auto !important;
-  height: 24px !important;
-  padding: 0 14px;
-  border-radius: 999px;
-  gap: 3px;
-  font-size: 10px;
-  white-space: nowrap;
-}
-
-@media (max-width: 640px) {
-  .pickup-marker-grouped {
-    height: 22px !important;
-    padding: 0 11px;
-    font-size: 9px;
-  }
-}
-
-.map-empty {
-  display: grid;
-  place-items: center;
-  min-height: 520px;
-  color: var(--muted);
-  font-weight: 700;
-  text-align: center;
-  padding: 24px;
-}
-
-.leaflet-container {
-  font: inherit;
-}
-
-.leaflet-popup-content {
-  margin: 10px 12px;
-  line-height: 1.35;
-}
 
 .passenger-list {
   display: grid;
@@ -668,8 +593,7 @@ button:disabled:hover {
     width: 170px;
   }
 
-  .dispatch-manifest,
-  .dispatch-map-panel {
+  .dispatch-manifest {
     padding: 14px;
   }
 
@@ -683,18 +607,7 @@ button:disabled:hover {
     height: 30px;
   }
 
-  .dispatch-map,
-  .map-empty {
-    height: 420px;
-    min-height: 420px;
-  }
 
-  .pickup-marker {
-    width: 22px !important;
-    height: 22px !important;
-    font-size: 9px;
-    border-width: 1.5px;
-  }
 }
 
 @media (max-width: 420px) {

@@ -1,7 +1,7 @@
 {
   "date": "2026-07-03",
   "movement": "eveningIn",
-  "distance_engine": "graphml_shortest_path",
+  "distance_engine": "haversine",
   "rule_set": {
     "inbound": "order all eligible pickups and dropoffs furthest-to-closest to R71; never drop a passenger before pickup",
     "outbound": "order all eligible pickups and dropoffs closest-to-furthest from R71; never drop a passenger before pickup"
@@ -32,7 +32,7 @@
       ]
     }
   ],
-  "total_distance_km": 14.376,
+  "total_distance_km": 12.024,
   "stops": [
     {
       "sequence": 1,
@@ -48,34 +48,13 @@
           "full_name": "Sensory Vukeya",
           "short_name": "Sensory",
           "pickup_area": "Ext 76",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Team A"
+          "dropoff_area": "Sasol R71"
         }
       ],
       "note": "Ext 76 pickup"
     },
     {
       "sequence": 2,
-      "type": "pickup",
-      "name": "Frans Mokgehle pickup",
-      "coordinates": [
-        29.4210221,
-        -23.8860013
-      ],
-      "passengers": [
-        {
-          "id": "p_frans_mokgehle",
-          "full_name": "Frans Mokgehle",
-          "short_name": "Frans",
-          "pickup_area": "Ext 78",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Team A"
-        }
-      ],
-      "note": "Ext 78 pickup"
-    },
-    {
-      "sequence": 3,
       "type": "dropoff",
       "name": "Sasol R71",
       "coordinates": [
@@ -88,16 +67,7 @@
           "full_name": "Sensory Vukeya",
           "short_name": "Sensory",
           "pickup_area": "Ext 76",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Team A"
-        },
-        {
-          "id": "p_frans_mokgehle",
-          "full_name": "Frans Mokgehle",
-          "short_name": "Frans",
-          "pickup_area": "Ext 78",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Team A"
+          "dropoff_area": "Sasol R71"
         }
       ],
       "note": "Inbound dropoff ordered by distance to R71"

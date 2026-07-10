@@ -3,11 +3,8 @@ const state = {
   schedules: [],
   locations: [],
   searchQuery: "",
-  pickupMap: null,
-  pickupLayer: null,
 };
 const defaultDate = getCurrentDateString();
-const pickupMapInitialView = { lat: -23.896257, lng: 29.457121, zoom: 11 };
 const movementLabels = {
   morningIn: "Morning In",
   morningOut: "Morning Out",
@@ -54,9 +51,6 @@ function setupTabs() {
       document.querySelectorAll(".view").forEach((view) => view.classList.remove("active"));
       button.classList.add("active");
       document.querySelector(`#${button.dataset.view}`).classList.add("active");
-      if (button.dataset.view === "dispatch") {
-        setTimeout(() => state.pickupMap?.invalidateSize(), 0);
-      }
     });
   });
 }
@@ -182,18 +176,13 @@ async function renderDispatch() {
   const movement = document.querySelector("#dispatchMovement").value;
   const route = await loadRoute(date, movement);
   const stops = route?.stops || [];
-  const stopsWithLocations = stops.filter((stop) => hasCoordinates(stop));
 
   document.querySelector("#dispatchTitle").textContent = movementLabels[movement];
   document.querySelector("#dispatchSubtitle").textContent = route
     ? formatDate(date)
     : `${formatDate(date)} · no route order`;
   document.querySelector("#dispatchCount").textContent = String(stops.length);
-  document.querySelector("#dispatchMapSummary").textContent = route
-    ? `${stopsWithLocations.length} ordered stops`
-    : "No route order generated for this selection";
   document.querySelector("#dispatchList").innerHTML = renderDispatchList(stops);
-  renderPickupMap(stopsWithLocations);
 }
 
 async function loadRoute(date, movement) {
@@ -235,72 +224,6 @@ function renderDispatchList(stops) {
       `;
     })
     .join("");
-}
-
-function renderPickupMap(records) {
-  const mapElement = document.querySelector("#dispatchMap");
-
-  if (!records.length) {
-    destroyPickupMap();
-    mapElement.innerHTML = `<div class="map-empty">No pickup coordinates for this movement.</div>`;
-    return;
-  }
-
-  if (typeof L === "undefined") {
-    destroyPickupMap();
-    mapElement.innerHTML = `<div class="map-empty">Map library failed to load.</div>`;
-    return;
-  }
-
-  if (!state.pickupMap) {
-    mapElement.innerHTML = "";
-    state.pickupMap = L.map(mapElement, {
-      zoomControl: true,
-      scrollWheelZoom: true,
-      tap: true,
-    }).setView([pickupMapInitialView.lat, pickupMapInitialView.lng], pickupMapInitialView.zoom);
-
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution: "&copy; OpenStreetMap contributors",
-    }).addTo(state.pickupMap);
-
-  }
-
-  if (state.pickupLayer) {
-    state.pickupLayer.remove();
-  }
-
-  const groups = groupByCoordinates(records);
-
-  const markers = groups.map((group) => {
-    const [lng, lat] = group[0].coordinates;
-    const seqs = group.map((r) => r.sequence);
-    const label = seqs.length > 1 ? `${Math.min(...seqs)}-${Math.max(...seqs)}` : String(seqs[0]);
-
-    const types = [...new Set(group.map((r) => r.type))];
-    const typeClass = types.length === 1 ? types[0] : "pickup";
-    const groupClass = group.length > 1 ? "pickup-marker-grouped" : "";
-
-    const popupHtml = group
-      .map((r) => {
-        const names = passengerDisplayNames(r);
-        return `<strong>${r.sequence}. ${escapeHtml(names || r.name)}</strong><br>${escapeHtml(r.type)}`;
-      })
-      .join("<hr style=\"margin:4px 0;border-color:rgba(6,42,49,0.1)\">");
-
-    return L.marker([lat, lng], {
-      icon: L.divIcon({
-        className: `pickup-marker pickup-marker-${typeClass} ${groupClass}`,
-        html: `<span>${label}</span>`,
-        iconSize: null,
-      }),
-      title: group.map((r) => r.name).join(", "),
-    }).bindPopup(popupHtml);
-  });
-
-  state.pickupLayer = L.featureGroup(markers).addTo(state.pickupMap);
-  setTimeout(() => state.pickupMap?.invalidateSize(), 0);
 }
 
 function renderPassengerList(names) {
@@ -345,43 +268,8 @@ function formatRosterRange(dateList) {
   return `${first.toLocaleDateString("en-ZA", firstFormat)} - ${last.toLocaleDateString("en-ZA", lastFormat)}`;
 }
 
-function groupByCoordinates(records) {
-  const threshold = 50;
-  const groups = [];
-  let current = [records[0]];
-
-  for (let i = 1; i < records.length; i++) {
-    const [lng1, lat1] = current[current.length - 1].coordinates;
-    const [lng2, lat2] = records[i].coordinates;
-    const dist = L.latLng(lat1, lng1).distanceTo(L.latLng(lat2, lng2));
-
-    if (dist <= threshold) {
-      current.push(records[i]);
-    } else {
-      groups.push(current);
-      current = [records[i]];
-    }
-  }
-  if (current.length) groups.push(current);
-  return groups;
-}
-
-function hasCoordinates(record) {
-  return Array.isArray(record.coordinates)
-    && Number.isFinite(record.coordinates[0])
-    && Number.isFinite(record.coordinates[1]);
-}
-
 function passengerDisplayNames(stop) {
   return stop.passengers.map((passenger) => passenger.full_name || passenger.short_name).join(", ");
-}
-
-function destroyPickupMap() {
-  if (!state.pickupMap) return;
-
-  state.pickupMap.remove();
-  state.pickupMap = null;
-  state.pickupLayer = null;
 }
 
 function escapeHtml(value) {

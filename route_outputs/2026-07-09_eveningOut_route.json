@@ -1,7 +1,7 @@
 {
   "date": "2026-07-09",
   "movement": "eveningOut",
-  "distance_engine": "graphml_shortest_path",
+  "distance_engine": "haversine",
   "rule_set": {
     "inbound": "order all eligible pickups and dropoffs furthest-to-closest to R71; never drop a passenger before pickup",
     "outbound": "order all eligible pickups and dropoffs closest-to-furthest from R71; never drop a passenger before pickup"
@@ -32,7 +32,7 @@
       ]
     }
   ],
-  "total_distance_km": 24.439,
+  "total_distance_km": 18.44,
   "stops": [
     {
       "sequence": 1,
@@ -48,40 +48,28 @@
           "full_name": "Sensory Vukeya",
           "short_name": "Sensory",
           "pickup_area": "Ext 76",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Team A"
-        },
-        {
-          "id": "p_frans_mokgehle",
-          "full_name": "Frans Mokgehle",
-          "short_name": "Frans",
-          "pickup_area": "Ext 78",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Team A"
+          "dropoff_area": "Sasol R71"
         },
         {
           "id": "p_portia_munyai",
           "full_name": "Portia Munyai",
           "short_name": "Portia",
           "pickup_area": "Ext 76",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Floater"
+          "dropoff_area": "Sasol R71"
         },
         {
           "id": "p_asher_malungani",
           "full_name": "Asher Malungani",
           "short_name": "Asher",
           "pickup_area": "Serala View",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Floater"
+          "dropoff_area": "Sasol R71"
         },
         {
           "id": "p_precious_mpyanyane",
           "full_name": "Precious Mpyanyane",
           "short_name": "Precious",
           "pickup_area": "Seshego Zone 8",
-          "dropoff_area": "Seattle Coffee R71",
-          "group_name": "Seattle Coffee R71"
+          "dropoff_area": "Seattle Coffee R71"
         }
       ],
       "note": "Outbound pickup ordered by distance from R71"
@@ -100,8 +88,7 @@
           "full_name": "Asher Malungani",
           "short_name": "Asher",
           "pickup_area": "Serala View",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Floater"
+          "dropoff_area": "Sasol R71"
         }
       ],
       "note": "Serala View dropoff"
@@ -120,54 +107,13 @@
           "full_name": "Johannes Ramoraswi",
           "short_name": "Johannes",
           "pickup_area": "Ext 76",
-          "dropoff_area": "SSI Security",
-          "group_name": "SSI Security"
+          "dropoff_area": "SSI Security"
         }
       ],
       "note": "Outbound pickup ordered by distance from R71"
     },
     {
       "sequence": 4,
-      "type": "dropoff",
-      "name": "Frans Mokgehle dropoff",
-      "coordinates": [
-        29.4210221,
-        -23.8860013
-      ],
-      "passengers": [
-        {
-          "id": "p_frans_mokgehle",
-          "full_name": "Frans Mokgehle",
-          "short_name": "Frans",
-          "pickup_area": "Ext 78",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Team A"
-        }
-      ],
-      "note": "Ext 78 dropoff"
-    },
-    {
-      "sequence": 5,
-      "type": "dropoff",
-      "name": "Portia Munyai dropoff",
-      "coordinates": [
-        29.3969942,
-        -23.8827173
-      ],
-      "passengers": [
-        {
-          "id": "p_portia_munyai",
-          "full_name": "Portia Munyai",
-          "short_name": "Portia",
-          "pickup_area": "Ext 76",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Floater"
-        }
-      ],
-      "note": "Ext 76 dropoff"
-    },
-    {
-      "sequence": 6,
       "type": "dropoff",
       "name": "Johannes Ramoraswi dropoff",
       "coordinates": [
@@ -180,14 +126,13 @@
           "full_name": "Johannes Ramoraswi",
           "short_name": "Johannes",
           "pickup_area": "Ext 76",
-          "dropoff_area": "SSI Security",
-          "group_name": "SSI Security"
+          "dropoff_area": "SSI Security"
         }
       ],
       "note": "Ext 76 dropoff"
     },
     {
-      "sequence": 7,
+      "sequence": 5,
       "type": "dropoff",
       "name": "Sensory Vukeya dropoff",
       "coordinates": [
@@ -200,14 +145,32 @@
           "full_name": "Sensory Vukeya",
           "short_name": "Sensory",
           "pickup_area": "Ext 76",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Team A"
+          "dropoff_area": "Sasol R71"
         }
       ],
       "note": "Ext 76 dropoff"
     },
     {
-      "sequence": 8,
+      "sequence": 6,
+      "type": "dropoff",
+      "name": "Portia Munyai dropoff",
+      "coordinates": [
+        29.3969942,
+        -23.8827173
+      ],
+      "passengers": [
+        {
+          "id": "p_portia_munyai",
+          "full_name": "Portia Munyai",
+          "short_name": "Portia",
+          "pickup_area": "Ext 76",
+          "dropoff_area": "Sasol R71"
+        }
+      ],
+      "note": "Ext 76 dropoff"
+    },
+    {
+      "sequence": 7,
       "type": "dropoff",
       "name": "Precious Mpyanyane dropoff",
       "coordinates": [
@@ -220,8 +183,7 @@
           "full_name": "Precious Mpyanyane",
           "short_name": "Precious",
           "pickup_area": "Seshego Zone 8",
-          "dropoff_area": "Seattle Coffee R71",
-          "group_name": "Seattle Coffee R71"
+          "dropoff_area": "Seattle Coffee R71"
         }
       ],
       "note": "Seshego Zone 8 dropoff"

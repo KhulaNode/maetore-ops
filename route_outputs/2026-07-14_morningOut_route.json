@@ -1,7 +1,7 @@
 {
   "date": "2026-07-14",
   "movement": "morningOut",
-  "distance_engine": "graphml_shortest_path",
+  "distance_engine": "haversine",
   "rule_set": {
     "inbound": "order all eligible pickups and dropoffs furthest-to-closest to R71; never drop a passenger before pickup",
     "outbound": "order all eligible pickups and dropoffs closest-to-furthest from R71; never drop a passenger before pickup"
@@ -32,7 +32,7 @@
       ]
     }
   ],
-  "total_distance_km": 22.765,
+  "total_distance_km": 18.925,
   "stops": [
     {
       "sequence": 1,
@@ -48,8 +48,7 @@
           "full_name": "Lesiba Choeu",
           "short_name": "Lesiba",
           "pickup_area": "Spook Park",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Team C"
+          "dropoff_area": "Sasol R71"
         }
       ],
       "note": "Outbound pickup ordered by distance from R71"
@@ -68,8 +67,7 @@
           "full_name": "Lesiba Choeu",
           "short_name": "Lesiba",
           "pickup_area": "Spook Park",
-          "dropoff_area": "Sasol R71",
-          "group_name": "Team C"
+          "dropoff_area": "Sasol R71"
         }
       ],
       "note": "Spook Park dropoff"

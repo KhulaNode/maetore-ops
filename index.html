@@ -11,10 +11,6 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="assets/favicon.svg" />
   <link rel="manifest" href="manifest.json" />
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -101,21 +97,9 @@
           </div>
           <div id="dispatchList" class="manifest-list"></div>
         </section>
-        <section class="panel dispatch-map-panel">
-          <div class="dispatch-heading">
-            <div>
-              <h2>Pickup Map</h2>
-              <p id="dispatchMapSummary" class="muted">Interactive pickup map from the GeoJSON file.</p>
-            </div>
-          </div>
-          <div id="dispatchMap" class="dispatch-map" aria-label="Selected pickup locations"></div>
-        </section>
       </div>
     </section>
   </main>
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-  ></script>
   <script src="js/app.js"></script>
 </body>
 </html>

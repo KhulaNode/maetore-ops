@@ -55,11 +55,6 @@ def get_invoices():
     return json_response(load("invoices"))
 
 
-@app.get("/api/groups")
-def get_groups():
-    return json_response(load("groups"))
-
-
 @app.get("/api/passenger-home-locations")
 def get_passenger_home_locations():
     return json_response(load_geojson("passenger-home-locations"))
