@@ -1,7 +1,7 @@
 {
   "name": "Maetore Transport Services",
   "short_name": "Maetore",
-  "start_url": ".",
+  "start_url": ".?v=1",
   "display": "standalone",
   "background_color": "#e9fbff",
   "theme_color": "#0f3f45",

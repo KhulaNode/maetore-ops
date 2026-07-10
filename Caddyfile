@@ -2,6 +2,16 @@
     root * /srv
     encode gzip
 
+    header / {
+        Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0"
+        Pragma "no-cache"
+        Expires "0"
+    }
+
+    header /assets/* {
+        Cache-Control "public, immutable, max-age=31536000"
+    }
+
     handle /api/* {
         reverse_proxy api:8000
     }

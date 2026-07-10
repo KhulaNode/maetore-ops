@@ -2,7 +2,6 @@ const state = {
   passengers: [],
   schedules: [],
   locations: [],
-  routeCache: new Map(),
   searchQuery: "",
   pickupMap: null,
   pickupLayer: null,
@@ -17,7 +16,7 @@ const movementLabels = {
 };
 
 async function loadJson(path) {
-  const response = await fetch(path);
+  const response = await fetch(path, { cache: "no-store" });
   if (!response.ok) throw new Error(`Failed to load ${path}`);
   return response.json();
 }
@@ -200,16 +199,10 @@ async function renderDispatch() {
 async function loadRoute(date, movement) {
   const path = `/route_outputs/${routeFileName(date, movement)}`;
 
-  if (state.routeCache.has(path)) {
-    return state.routeCache.get(path);
-  }
-
   try {
     const route = await loadJson(path);
-    state.routeCache.set(path, route);
     return route;
   } catch (error) {
-    state.routeCache.set(path, null);
     return null;
   }
 }
@@ -402,7 +395,7 @@ function escapeHtml(value) {
 
 function registerServiceWorker() {
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js").catch(() => {
+    navigator.serviceWorker.register("sw.js?v=" + Date.now()).catch(() => {
       console.warn("Service worker registration failed. This is fine in some local setups.");
     });
   }
