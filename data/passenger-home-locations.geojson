@@ -6,6 +6,26 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          29.3502856,
+          -23.8210578
+        ]
+      },
+      "properties": {
+        "passenger_id": "p_raynet_mabotja",
+        "full_name": "Raynet Mabotja",
+        "short_name": "Raynet ",
+        "pickup_area": "Spook Park",
+        "dropoff_area": "Netcare Pholoso",
+        "status": "active",
+        "phone": "+27 60 899 2970",
+        "email": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           29.4068004,
           -23.887007
         ]

@@ -5,6 +5,8 @@ const state = {
   searchQuery: "",
 };
 const defaultDate = getCurrentDateString();
+const scheduleStartDate = "2026-07-12";
+const scheduleEndDate = "2026-08-08";
 const movementLabels = {
   morningIn: "Morning In",
   morningOut: "Morning Out",
@@ -37,7 +39,10 @@ async function boot() {
   state.schedules = schedules;
   state.locations = homeLocations.features || [];
 
-  document.querySelector("#dispatchDate").value = defaultDate;
+  const dispatchDate = document.querySelector("#dispatchDate");
+  dispatchDate.min = scheduleStartDate;
+  dispatchDate.max = scheduleEndDate;
+  dispatchDate.value = clampDateToScheduleWindow(defaultDate);
   setupTabs();
   setupEvents();
   renderAll();
@@ -102,12 +107,22 @@ function schedulesForDate(date) {
 }
 
 function dates() {
-  return [...new Set(state.schedules.map((item) => item.date))].sort();
+  const result = [];
+  let date = scheduleStartDate;
+
+  while (date <= scheduleEndDate) {
+    result.push(date);
+    const next = new Date(`${date}T00:00:00Z`);
+    next.setUTCDate(next.getUTCDate() + 1);
+    date = next.toISOString().slice(0, 10);
+  }
+
+  return result;
 }
 
 function passengerNamesFor(date, movement) {
   return schedulesForMovement(date, movement)
-    .map((item) => passenger(item.passengerId)?.fullName || passenger(item.passengerId)?.shortName)
+    .map((item) => passengerRecord(item.passengerId).fullName)
     .filter(Boolean);
 }
 
@@ -121,7 +136,17 @@ function passengersForMovement(date, movement) {
 
 function renderMetrics() {
   document.querySelector("#metricRosterRange").textContent = formatRosterRange(dates());
-  document.querySelector("#metricPassengers").textContent = String(state.passengers.length);
+  const passengerIds = new Set([
+    ...state.passengers.map((item) => item.id),
+    ...state.locations.map((feature) => feature.properties?.passenger_id),
+  ].filter(Boolean));
+  document.querySelector("#metricPassengers").textContent = String(passengerIds.size);
+}
+
+function clampDateToScheduleWindow(date) {
+  if (date < scheduleStartDate) return scheduleStartDate;
+  if (date > scheduleEndDate) return scheduleEndDate;
+  return date;
 }
 
 function matchesSearch(name) {
@@ -172,7 +197,7 @@ function renderSchedule() {
 }
 
 async function renderDispatch() {
-  const date = document.querySelector("#dispatchDate").value || defaultDate;
+  const date = document.querySelector("#dispatchDate").value || clampDateToScheduleWindow(defaultDate);
   const movement = document.querySelector("#dispatchMovement").value;
   const route = await loadRoute(date, movement);
   const stops = route?.stops || [];
