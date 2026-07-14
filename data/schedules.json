@@ -2016,22 +2016,22 @@
     "id": "sch_p_precious_mpyanyane_2026-07-13",
     "passengerId": "p_precious_mpyanyane",
     "date": "2026-07-13",
-    "shift": "OFF",
+    "shift": "E",
     "morningIn": false,
     "morningOut": false,
     "eveningIn": false,
-    "eveningOut": false,
+    "eveningOut": true,
     "notes": ""
   },
   {
     "id": "sch_p_precious_mpyanyane_2026-07-14",
     "passengerId": "p_precious_mpyanyane",
     "date": "2026-07-14",
-    "shift": "OFF",
+    "shift": "E",
     "morningIn": false,
     "morningOut": false,
     "eveningIn": false,
-    "eveningOut": false,
+    "eveningOut": true,
     "notes": ""
   },
   {
@@ -2275,5 +2275,82 @@
     "eveningIn": false,
     "eveningOut": false,
     "notes": "One-time Morning Out-only exception requested by operator"
+  },
+  {
+    "id": "sch_p_precious_mpyanyane_2026-07-16",
+    "passengerId": "p_precious_mpyanyane",
+    "date": "2026-07-16",
+    "shift": "E",
+    "morningIn": false,
+    "morningOut": false,
+    "eveningIn": false,
+    "eveningOut": true,
+    "notes": "Evening Out only per Precious WhatsApp 2026-07-14"
+  },
+  {
+    "id": "sch_p_precious_mpyanyane_2026-07-20",
+    "passengerId": "p_precious_mpyanyane",
+    "date": "2026-07-20",
+    "shift": "E",
+    "morningIn": false,
+    "morningOut": false,
+    "eveningIn": false,
+    "eveningOut": true,
+    "notes": "Evening Out only per Precious WhatsApp 2026-07-14"
+  },
+  {
+    "id": "sch_p_precious_mpyanyane_2026-07-21",
+    "passengerId": "p_precious_mpyanyane",
+    "date": "2026-07-21",
+    "shift": "E",
+    "morningIn": false,
+    "morningOut": false,
+    "eveningIn": false,
+    "eveningOut": true,
+    "notes": "Evening Out only per Precious WhatsApp 2026-07-14"
+  },
+  {
+    "id": "sch_p_precious_mpyanyane_2026-07-23",
+    "passengerId": "p_precious_mpyanyane",
+    "date": "2026-07-23",
+    "shift": "E",
+    "morningIn": false,
+    "morningOut": false,
+    "eveningIn": false,
+    "eveningOut": true,
+    "notes": "Evening Out only per Precious WhatsApp 2026-07-14"
+  },
+  {
+    "id": "sch_p_precious_mpyanyane_2026-07-27",
+    "passengerId": "p_precious_mpyanyane",
+    "date": "2026-07-27",
+    "shift": "E",
+    "morningIn": false,
+    "morningOut": false,
+    "eveningIn": false,
+    "eveningOut": true,
+    "notes": "Evening Out only per Precious WhatsApp 2026-07-14"
+  },
+  {
+    "id": "sch_p_precious_mpyanyane_2026-07-28",
+    "passengerId": "p_precious_mpyanyane",
+    "date": "2026-07-28",
+    "shift": "E",
+    "morningIn": false,
+    "morningOut": false,
+    "eveningIn": false,
+    "eveningOut": true,
+    "notes": "Evening Out only per Precious WhatsApp 2026-07-14"
+  },
+  {
+    "id": "sch_p_precious_mpyanyane_2026-07-30",
+    "passengerId": "p_precious_mpyanyane",
+    "date": "2026-07-30",
+    "shift": "E",
+    "morningIn": false,
+    "morningOut": false,
+    "eveningIn": false,
+    "eveningOut": true,
+    "notes": "Evening Out only per Precious WhatsApp 2026-07-14"
   }
 ]
