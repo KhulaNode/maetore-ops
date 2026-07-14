@@ -156,5 +156,18 @@
     "dropoffArea": "MBT Florapark",
     "phone": "+27 76 692 0908",
     "email": "mogaladimolelemane81@gmail.com"
+  },
+  {
+    "id": "p_raynet_mabotja",
+    "publicToken": "raynet-b5n8q2",
+    "fullName": "Raynet Mabotja",
+    "shortName": "Raynet",
+    "weeklyAmount": 30000,
+    "fortnightAmount": 60000,
+    "status": "active",
+    "pickupArea": "Spook Park",
+    "dropoffArea": "Netcare Pholoso",
+    "phone": "+27 60 899 2970",
+    "email": ""
   }
 ]
