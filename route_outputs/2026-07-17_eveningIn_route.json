@@ -1,0 +1,162 @@
+{
+  "date": "2026-07-17",
+  "movement": "eveningIn",
+  "distance_engine": "haversine",
+  "rule_set": {
+    "inbound": "order all eligible pickups and dropoffs furthest-to-closest to R71; never drop a passenger before pickup",
+    "outbound": "order all eligible pickups and dropoffs closest-to-furthest from R71; never drop a passenger before pickup"
+  },
+  "r71": {
+    "id": "r71",
+    "name": "Sasol R71",
+    "coordinates": [
+      29.5160153,
+      -23.8978861
+    ]
+  },
+  "special_destinations": [
+    {
+      "id": "ssi_security",
+      "name": "SSI Security",
+      "coordinates": [
+        29.4754902,
+        -23.9133595
+      ]
+    },
+    {
+      "id": "mbt_florapark",
+      "name": "MBT Florapark",
+      "coordinates": [
+        29.4754902,
+        -23.9133595
+      ]
+    },
+    {
+      "id": "sasol_jorrisen",
+      "name": "Sasol Jorrisen",
+      "coordinates": [
+        29.4593845,
+        -23.9052611
+      ]
+    }
+  ],
+  "total_distance_km": 19.956,
+  "stops": [
+    {
+      "sequence": 1,
+      "type": "pickup",
+      "name": "Aubrey Ntini pickup",
+      "coordinates": [
+        29.3587044,
+        -23.846616
+      ],
+      "passengers": [
+        {
+          "id": "p_aubrey_ntini",
+          "full_name": "Aubrey Ntini",
+          "short_name": "Aubrey",
+          "pickup_area": "Seshego Zone 5",
+          "dropoff_area": "Sasol R71"
+        }
+      ],
+      "note": "Seshego Zone 5 pickup"
+    },
+    {
+      "sequence": 2,
+      "type": "pickup",
+      "name": "Thlologelo Ledwaba pickup",
+      "coordinates": [
+        29.3702494,
+        -23.859129
+      ],
+      "passengers": [
+        {
+          "id": "p_hlologelo_ledwaba",
+          "full_name": "Thlologelo Ledwaba",
+          "short_name": "Thlologelo",
+          "pickup_area": "Seshego Zone 8",
+          "dropoff_area": "Sasol R71"
+        }
+      ],
+      "note": "Seshego Zone 8 pickup"
+    },
+    {
+      "sequence": 3,
+      "type": "pickup",
+      "name": "Rogers Pazinini pickup",
+      "coordinates": [
+        29.4104107,
+        -23.8923877
+      ],
+      "passengers": [
+        {
+          "id": "p_rogers_pazinini",
+          "full_name": "Rogers Pazinini",
+          "short_name": "Rogers",
+          "pickup_area": "Ext 44",
+          "dropoff_area": "Sasol R71"
+        }
+      ],
+      "note": "Ext 44 pickup"
+    },
+    {
+      "sequence": 4,
+      "type": "pickup",
+      "name": "Khanyi Maluleka pickup",
+      "coordinates": [
+        29.4462466,
+        -23.9231556
+      ],
+      "passengers": [
+        {
+          "id": "p_khanyi_maluleka",
+          "full_name": "Khanyi Maluleka",
+          "short_name": "Khanyi",
+          "pickup_area": "Ivy Park, Section 21",
+          "dropoff_area": "Sasol R71"
+        }
+      ],
+      "note": "Ivy Park, Section 21 pickup"
+    },
+    {
+      "sequence": 5,
+      "type": "dropoff",
+      "name": "Sasol R71",
+      "coordinates": [
+        29.5160153,
+        -23.8978861
+      ],
+      "passengers": [
+        {
+          "id": "p_hlologelo_ledwaba",
+          "full_name": "Thlologelo Ledwaba",
+          "short_name": "Thlologelo",
+          "pickup_area": "Seshego Zone 8",
+          "dropoff_area": "Sasol R71"
+        },
+        {
+          "id": "p_rogers_pazinini",
+          "full_name": "Rogers Pazinini",
+          "short_name": "Rogers",
+          "pickup_area": "Ext 44",
+          "dropoff_area": "Sasol R71"
+        },
+        {
+          "id": "p_aubrey_ntini",
+          "full_name": "Aubrey Ntini",
+          "short_name": "Aubrey",
+          "pickup_area": "Seshego Zone 5",
+          "dropoff_area": "Sasol R71"
+        },
+        {
+          "id": "p_khanyi_maluleka",
+          "full_name": "Khanyi Maluleka",
+          "short_name": "Khanyi",
+          "pickup_area": "Ivy Park, Section 21",
+          "dropoff_area": "Sasol R71"
+        }
+      ],
+      "note": "Inbound dropoff ordered by distance to R71"
+    }
+  ]
+}

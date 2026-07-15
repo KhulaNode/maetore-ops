@@ -1,7 +1,7 @@
 {
   "date": "2026-07-17",
   "movement": "morningIn",
-  "distance_engine": "graphml_shortest_path",
+  "distance_engine": "haversine",
   "rule_set": {
     "inbound": "order all eligible pickups and dropoffs furthest-to-closest to R71; never drop a passenger before pickup",
     "outbound": "order all eligible pickups and dropoffs closest-to-furthest from R71; never drop a passenger before pickup"
@@ -40,7 +40,7 @@
       ]
     }
   ],
-  "total_distance_km": 16.785,
+  "total_distance_km": 21.55,
   "stops": [
     {
       "sequence": 1,
@@ -63,6 +63,44 @@
     },
     {
       "sequence": 2,
+      "type": "pickup",
+      "name": "Lesiba Choeu pickup",
+      "coordinates": [
+        29.3507395,
+        -23.8196517
+      ],
+      "passengers": [
+        {
+          "id": "p_lesiba_choeu",
+          "full_name": "Lesiba Choeu",
+          "short_name": "Lesiba",
+          "pickup_area": "Spook Park",
+          "dropoff_area": "Sasol R71"
+        }
+      ],
+      "note": "Spook Park pickup"
+    },
+    {
+      "sequence": 3,
+      "type": "pickup",
+      "name": "Portia Munyai pickup",
+      "coordinates": [
+        29.3969942,
+        -23.8827173
+      ],
+      "passengers": [
+        {
+          "id": "p_portia_munyai",
+          "full_name": "Portia Munyai",
+          "short_name": "Portia",
+          "pickup_area": "Ext 76",
+          "dropoff_area": "Sasol R71"
+        }
+      ],
+      "note": "Ext 76 pickup"
+    },
+    {
+      "sequence": 4,
       "type": "dropoff",
       "name": "Sasol Jorrisen",
       "coordinates": [
@@ -76,6 +114,58 @@
           "short_name": "Happy",
           "pickup_area": "Spook Park",
           "dropoff_area": "Sasol Jorrisen"
+        }
+      ],
+      "note": "Inbound dropoff ordered by distance to R71"
+    },
+    {
+      "sequence": 5,
+      "type": "pickup",
+      "name": "Asher Malungani pickup",
+      "coordinates": [
+        29.5055955,
+        -23.9081105
+      ],
+      "passengers": [
+        {
+          "id": "p_asher_malungani",
+          "full_name": "Asher Malungani",
+          "short_name": "Asher",
+          "pickup_area": "Serala View",
+          "dropoff_area": "Sasol R71"
+        }
+      ],
+      "note": "Serala View pickup"
+    },
+    {
+      "sequence": 6,
+      "type": "dropoff",
+      "name": "Sasol R71",
+      "coordinates": [
+        29.5160153,
+        -23.8978861
+      ],
+      "passengers": [
+        {
+          "id": "p_lesiba_choeu",
+          "full_name": "Lesiba Choeu",
+          "short_name": "Lesiba",
+          "pickup_area": "Spook Park",
+          "dropoff_area": "Sasol R71"
+        },
+        {
+          "id": "p_portia_munyai",
+          "full_name": "Portia Munyai",
+          "short_name": "Portia",
+          "pickup_area": "Ext 76",
+          "dropoff_area": "Sasol R71"
+        },
+        {
+          "id": "p_asher_malungani",
+          "full_name": "Asher Malungani",
+          "short_name": "Asher",
+          "pickup_area": "Serala View",
+          "dropoff_area": "Sasol R71"
         }
       ],
       "note": "Inbound dropoff ordered by distance to R71"

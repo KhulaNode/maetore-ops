@@ -1,0 +1,60 @@
+{
+  "type": "FeatureCollection",
+  "name": "maetore_2026-07-26_morningOut_route",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.5160153,
+          -23.8978861
+        ]
+      },
+      "properties": {
+        "sequence": 1,
+        "type": "pickup",
+        "name": "Sasol R71",
+        "passenger_count": 2,
+        "passengers": "Raynet Mabotja, Sensory Vukeya",
+        "note": "Outbound pickup ordered by distance from R71"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.3993861,
+          -23.8799718
+        ]
+      },
+      "properties": {
+        "sequence": 2,
+        "type": "dropoff",
+        "name": "Sensory Vukeya dropoff",
+        "passenger_count": 1,
+        "passengers": "Sensory Vukeya",
+        "note": "Ext 76 dropoff"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.3502856,
+          -23.8210578
+        ]
+      },
+      "properties": {
+        "sequence": 3,
+        "type": "dropoff",
+        "name": "Raynet Mabotja dropoff",
+        "passenger_count": 1,
+        "passengers": "Raynet Mabotja",
+        "note": "Spook Park dropoff"
+      }
+    }
+  ]
+}
