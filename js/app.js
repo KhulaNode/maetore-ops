@@ -233,7 +233,10 @@ function renderDispatchList(stops) {
   return stops
     .map((stop) => {
       const passengerNames = passengerDisplayNames(stop);
-      const area = stop.passengers[0]?.pickup_area || stop.name;
+      const isPassengerHomeStop = / (pickup|dropoff)$/i.test(stop.name);
+      const area = isPassengerHomeStop
+        ? stop.passengers[0]?.pickup_area || stop.name
+        : stop.name;
 
       return `
         <article class="manifest-card">
