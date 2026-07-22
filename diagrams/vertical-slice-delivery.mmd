@@ -1,0 +1,18 @@
+flowchart TB
+    BR[Confirmed business rule] --> DM[Data model and status transitions]
+    DM --> API[Backend use case and API]
+    API --> UI[Phone-first role interface]
+    API --> JOB[Background job / integration adapter]
+    API --> AUDIT[Audit record]
+    UI --> TEST[Acceptance test with real Maetore data]
+    JOB --> TEST
+    AUDIT --> TEST
+    TEST -->|Pass| RELEASE[Release behind feature flag]
+    TEST -->|Fail| FIX[Fix the same slice]
+    FIX --> DM
+
+    subgraph RULE[Delivery rule]
+      R1[Finish one usable business workflow end-to-end]
+      R2[Do not build disconnected tables or screens]
+      R3[Old system stays available until parity is proven]
+    end
