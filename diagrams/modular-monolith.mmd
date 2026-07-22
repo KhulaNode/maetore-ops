@@ -1,0 +1,43 @@
+flowchart TB
+    UI[Phone-first PWA]
+    UI --> API[Single Backend Application]
+
+    subgraph MOD[Modular Monolith]
+      IAM[Identity & Access]
+      PASS[Passengers & Reserved Seats]
+      MONEY[Money Control]
+      ROSTER[Rosters & Schedules]
+      OPS[Routes & Movements]
+      FLEET[Vehicles & Drivers]
+      SAFE[Incidents & Safety]
+      COMMS[Notifications]
+      ALERTS[Alerts & Audit]
+      HERMES[Hermes Orchestrator]
+    end
+
+    API --> IAM
+    API --> PASS
+    API --> MONEY
+    API --> ROSTER
+    API --> OPS
+    API --> FLEET
+    API --> SAFE
+    API --> COMMS
+    API --> ALERTS
+    API --> HERMES
+
+    MOD --> DB[(One PostgreSQL + PostGIS Database)]
+    MOD --> OBJ[(Object Storage)]
+    MOD --> JOBS[Background Jobs]
+    MOD --> ADAPTERS[Replaceable Integration Adapters]
+
+    ADAPTERS --> WA[WhatsApp]
+    ADAPTERS --> CT[Cartrack]
+    ADAPTERS --> PAY[Paystack / PayShap / EFT]
+    ADAPTERS --> MAP[Routing / Geocoding]
+    ADAPTERS --> MAIL[Email]
+
+    K8S[Kubernetes]:::blocked
+    K8S -. never used .- MOD
+
+    classDef blocked fill:#fff,stroke:#900,stroke-width:2px,stroke-dasharray: 5 5;
