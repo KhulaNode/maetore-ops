@@ -1,0 +1,40 @@
+erDiagram
+    USER ||--o{ USER_ROLE : has
+    ROLE ||--o{ USER_ROLE : grants
+    USER ||--o| PASSENGER : may_be
+    USER ||--o| DRIVER : may_be
+
+    PASSENGER ||--o{ EMERGENCY_CONTACT : has
+    PASSENGER ||--o{ PASSENGER_ADDRESS : uses
+    PASSENGER ||--o{ RESERVED_SEAT : holds
+    SERVICE_PRODUCT ||--o{ RESERVED_SEAT : classifies
+    WORKPLACE ||--o{ RESERVED_SEAT : serves
+
+    RESERVED_SEAT ||--o{ PAYMENT_OBLIGATION : generates
+    PAYMENT_OBLIGATION ||--o{ PAYMENT_ALLOCATION : settled_by
+    PAYMENT ||--o{ PAYMENT_ALLOCATION : allocates
+    RESERVED_SEAT ||--o{ PAYMENT_ARRANGEMENT : may_have
+
+    ROSTER_UPLOAD ||--o{ ROSTER_VERSION : versions
+    ROSTER_VERSION ||--o{ SHIFT_ASSIGNMENT : produces
+    PASSENGER ||--o{ SHIFT_ASSIGNMENT : receives
+
+    SHIFT_ASSIGNMENT ||--o{ MOVEMENT_PASSENGER : creates
+    MOVEMENT ||--o{ MOVEMENT_PASSENGER : includes
+    ROUTE_VERSION ||--o{ ROUTE_STOP : orders
+    MOVEMENT ||--o{ ROUTE_VERSION : planned_by
+
+    VEHICLE ||--o{ VEHICLE_ASSIGNMENT : receives
+    DRIVER ||--o{ VEHICLE_ASSIGNMENT : performs
+    MOVEMENT ||--o{ VEHICLE_ASSIGNMENT : uses
+
+    VEHICLE ||--o{ INSPECTION : checked_by
+    VEHICLE ||--o{ MAINTENANCE_RECORD : serviced_by
+    MOVEMENT ||--o{ INCIDENT : may_have
+    VEHICLE ||--o{ INCIDENT : may_involve
+    DRIVER ||--o{ DRIVER_WARNING : receives
+
+    USER ||--o{ AUDIT_RECORD : performs
+    OPERATIONAL_ALERT }o--|| USER : assigned_to
+    NOTIFICATION }o--|| PASSENGER : may_target
+    NOTIFICATION }o--|| DRIVER : may_target
