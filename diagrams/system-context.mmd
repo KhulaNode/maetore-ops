@@ -1,0 +1,33 @@
+flowchart LR
+    M[Moloko] --> A[Management PWA]
+    F[Moloko's Father] --> A
+    D[Drivers] --> B[Driver PWA]
+    P[Passengers] --> C[Passenger PWA]
+    U[Public] --> G[Public Live Map / Feedback]
+
+    A --> X[Maetore Modular Monolith]
+    B --> X
+    C --> X
+    G --> X
+
+    X --> DB[(PostgreSQL + PostGIS)]
+    X --> FS[(Object Storage)]
+    X --> H[Hermes]
+    X --> J[Background Jobs]
+
+    H --> X
+    J --> X
+
+    X --> W[WhatsApp Adapter]
+    X --> T[Cartrack Adapter]
+    X --> Y[Paystack Adapter]
+    X --> E[Email Adapter]
+    X --> R[Routing / Geocoding Adapter]
+    X --> BF[Bolt Fleet Link]
+
+    W -. failure .-> PH[Phone-call fallback]
+    T -. failure .-> DM[Driver manual updates]
+    X -. outage .-> PDF[Offline weekly schedule PDF]
+
+    GH[GitHub] -->|deploys software only| X
+    GH -. no operational records .- DB
