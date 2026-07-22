@@ -1,0 +1,18 @@
+flowchart LR
+    A[Freeze current JSON changes] --> B[Back up repo data and live site]
+    B --> C[Inventory JSON, GeoJSON, route outputs and payment links]
+    C --> D[Create PostgreSQL + PostGIS]
+    D --> E[Create migration tables and import scripts]
+    E --> F[Import passengers, locations and schedules]
+    F --> G[Validate counts and spot-check records]
+    G --> H[Connect existing schedule and route logic to DB reads]
+    H --> I[Run old and new systems in parallel]
+    I --> J{Parity checks pass?}
+    J -- No --> K[Fix mappings and rerun]
+    K --> G
+    J -- Yes --> L[Switch application reads to database]
+    L --> M[Keep JSON export as rollback snapshot]
+    M --> N[Smoke test live site]
+    N --> O{Critical failure?}
+    O -- Yes --> P[Rollback to static JSON]
+    O -- No --> Q[Migration complete]
