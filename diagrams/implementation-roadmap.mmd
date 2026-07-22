@@ -1,0 +1,17 @@
+flowchart LR
+    P0[Phase 0: Delivery Foundation] --> P1[Phase 1: Identity, Roles and Audit]
+    P1 --> P2[Phase 2: Passenger and Reserved-Seat Core]
+    P2 --> P3[Phase 3: Passenger Money Control]
+    P2 --> P4[Phase 4: Rosters and Schedules]
+    P4 --> P5[Phase 5: Movements, Routes and Driver Operations]
+    P5 --> P6[Phase 6: Tracking, ETA and Communications]
+    P1 --> P7[Phase 7: Fleet, Safety and Incidents]
+    P3 --> P8[Phase 8: Hermes and Management Control Centre]
+    P4 --> P8
+    P5 --> P8
+    P7 --> P8
+    P6 --> P9[Phase 9: Migration, Parallel Run and Launch]
+    P8 --> P9
+
+    P0 -. no Kubernetes .-> N[Docker-based modular monolith]
+    P9 --> LIVE[Database-backed Maetore operating system]
